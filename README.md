@@ -1,32 +1,197 @@
-# Lab 2: CPACS geometry extraction
+# Lab 2: CPACS to OpenVSP
 
-This first step converts the supplied VAMPzero toolOutput.xml into inspectable
-geometry data, independently of OpenVSP. It does not yet create a .vsp3 model.
+Python tool for extracting aircraft geometry from a VAMPzero `toolOutput.xml` and building an OpenVSP model with either the wing and tails or all four components.
 
-## Run
+```text
+toolOutput.xml -> Python parser -> CSV + airfoil DAT files -> selected builder -> .vsp3
+```
 
-Python 3.10+ and NumPy are required:
+## Current status
 
-    python -m pip install numpy
-    python parse_cpacs_geometry.py toolOutput.xml --out geometry_data
+The parser and both launcher modes pass input validation. Importing the official OpenVSP API has been confirmed on Windows with Python 3.11.9 and OpenVSP 3.43.0. The latest complete geometry build and visual comparison with TiGL remain to be verified. No VSPAERO analysis is launched by these scripts.
 
-Outputs supplied here were produced from 05-toolOutput.xml on 23 October 2026.
-The input XML is not duplicated in this package.
+## Software and download links
+
+| Software | Project setup | Download / documentation |
+|---|---|---|
+| Python | CPython 3.11, 64-bit; API import confirmed with 3.11.9 | [Python 3.11.9](https://www.python.org/downloads/release/python-3119/) — select Windows installer (64-bit) |
+| OpenVSP | 3.43.0 Windows 64-bit distribution compiled for Python 3.11 | [Archived OpenVSP downloads](https://openvsp.org/download_old.php) |
+| OpenVSP Python API | Bundled with the OpenVSP distribution | [Official API documentation](https://openvsp.org/pyapi_docs/latest/) |
+| Project packages | NumPy and tqdm | Installed with pip below |
+| Git (optional) | Required for cloning and contributing | [Git for Windows](https://gitforwindows.org/) |
+
+Python's major/minor version and architecture must match the downloaded OpenVSP binary. The Python 3.14 environment previously used for this project could not import this distribution's compiled API. Check the downloaded OpenVSP `python/README.md` and `python/environment.yml`; the latter specifies Python 3.11 for the distribution used here. Other OpenVSP releases may require different interpreters or API settings. The lab guide mentions 3.40.1; this project's installation was configured with 3.43.0.
+
+The `latest` API documentation may describe features absent from 3.43.0; check release-specific source or installed examples when a function or enum is unavailable.
+
+## 1. Obtain the project and OpenVSP
+
+Clone the repository, or download and extract its ZIP:
+
+```powershell
+git clone https://github.com/jonas1abad/project-design-certification-lab2.git
+cd project-design-certification-lab2
+```
+
+Open the folder containing `main.py` in VS Code. Keep `parse_cpacs_geometry.py`, `build_openvsp.py`, `build_wing_tail.py` and your example `toolOutput.xml` beside it.
+
+Download and fully extract OpenVSP 3.43.0 for Windows 64-bit / Python 3.11. Keep the installation outside the repository. The API is included; do not obtain it using `pip install vsp`.
+
+## 2. Create the virtual environment
+
+Install Python 3.11 64-bit from the link above. Reopen the terminal after installation. In PowerShell, from the folder containing `main.py`:
+
+```powershell
+py -3.11 --version
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python --version
+python -c "import sys, struct; print(sys.executable); print('Architecture:', struct.calcsize('P') * 8)"
+python -m pip install --upgrade pip
+python -m pip install numpy tqdm
+```
+
+Expected: Python 3.11.x, an executable under this project's `.venv`, and architecture 64. The repository's `requirements.txt` should contain `numpy` and `tqdm`; once it does, `python -m pip install -r requirements.txt` is equivalent for project dependencies. OpenVSP is installed separately below.
+
+If `py -3.11` reports no suitable runtime, install Python 3.11 first. A venv cannot change the version of its base interpreter. If PowerShell blocks activation, run commands with `.\.venv\Scripts\python.exe` instead of `python`; activation is optional.
+
+In VS Code, use **Python: Select Interpreter** and select `.venv\Scripts\python.exe`.
+
+## 3. Install the OpenVSP Python API in the venv
+
+Set this path to your own extracted OpenVSP `python` directory:
+
+```powershell
+$vspPython = "$env:USERPROFILE\Documents\OpenVSP-3.43.0-win64\python"
+```
+
+Its contents should include `utilities`, `degen_geom`, `openvsp_config`, `openvsp` and `requirements.txt`.
+
+Install the distribution's companion packages from its `python` directory. Its requirements file uses relative paths, so changing directory matters:
+
+```powershell
+Push-Location $vspPython
+python -m pip install -r requirements.txt
+Pop-Location
+```
+
+For this project's Windows installation, a normal package install did not copy `_vsp.pyd` into the venv. Installing `openvsp` in editable mode resolved the import by using the compiled extension in the original distribution directory:
+
+```powershell
+python -m pip uninstall -y openvsp
+python -m pip install --no-deps -e "$vspPython\openvsp"
+```
+
+Run this only after the companion-package installation succeeds. `--no-deps` does not install missing dependencies. Keep the extracted OpenVSP folder in place because editable mode references it directly.
+
+Verify the API before running the tool:
+
+```powershell
+python -c "import openvsp as vsp; print(vsp.GetVSPVersion())"
+```
+
+Expected for this setup:
+
+```text
+OpenVSP 3.43.0
+```
+
+## 4. Run the workflow
+
+Both modes parse the XML first, then run the selected builder using the same venv Python. If a stage fails, execution stops.
+
+### Wing and tails only
+
+```powershell
+python main.py --mode wing-tail
+```
+
+Runs `build_wing_tail.py` after parsing and creates:
+
+```text
+output/Lab2_wing_tail.vsp3
+```
+
+Contains wing, HTP and VTP, with sets `W`, `WH`, `WV` and `WHV`. These sets contain no fuselage. This is useful for inspecting the lifting surfaces before adding a fuselage manually in OpenVSP.
+
+### All components
+
+```powershell
+python main.py --mode all
+```
+
+Runs `build_openvsp.py` after parsing and creates:
+
+```text
+output/Lab2_aircraft.vsp3
+```
+
+Includes the fuselage, wing and tails, with sets `WB`, `WBH`, `WBV` and `WBHV`. The fuselage is lofted from extracted elliptical stations. Its surface must be checked visually against TiGL. The default mode when no option is supplied is `all`.
+
+The lab guide suggests fitting the fuselage manually using aircraft views or TiGL screenshots as backgrounds. It permits skipping CPACS fuselage reconstruction; it does not require manual construction. If adding the fuselage to the wing-tail model, save a separate complete-aircraft file and create the corresponding body-containing analysis sets there.
+
+### Other options
+
+```powershell
+# Parse and validate without importing OpenVSP:
+python main.py --mode wing-tail --validate-only
+python main.py --mode all --validate-only
+
+# Choose input and output paths:
+python main.py --mode wing-tail --xml "C:\MyProject\toolOutput.xml" --output "C:\MyProject\output\aircraft.vsp3"
+
+# Set wing tessellation:
+python main.py --mode all --chordwise 41 --spanwise 16
+
+# Run only the parser:
+python parse_cpacs_geometry.py toolOutput.xml --out geometry_data
+```
+
+Default paths resolve relative to `main.py`; explicit relative paths resolve from the terminal's working directory. CSV and DAT files must stay together. Progress bars advance between API calls; a single slow OpenVSP call can pause a bar. The model is saved only after the build and parameter checks pass. Existing exports at the selected paths are overwritten, so save manual edits under a different filename.
+
+Open the generated `.vsp3` in OpenVSP using **File -> Open**. The adjacent `.build.json` records API version, station counts, set indices and reference quantities. Those references are recorded for later analysis, not automatically assigned to VSPAERO.
 
 ## Outputs
 
-- geometry_data/geometry.json: component transforms, symmetry, UID links,
-  section/element matrices, positioning vectors, transformed section contours,
-  wing leading-edge locations, chords, and reference quantities.
-- wing_stations.csv: eight lifting-surface stations, with local twists and global LE.
-- wing_bays.csv: five lifting-surface bays resolved using segment element UIDs.
-- fuselage_sections.csv: 60 stations with center positions, width and height.
-- One .dat per lifting-surface element: normalized x-z coordinates after the
-  thickness/camber scaling encoded by that station. Names remain unique even
-  when several stations refer to the same original CPACS airfoil.
+| File | Contents |
+|---|---|
+| `geometry_data/openvsp_input.csv` | Main builder input: one row per station, including component placement and relative airfoil paths |
+| `geometry_data/geometry.json` | Component transforms, symmetry, UID links, matrices and contours |
+| `geometry_data/wing_stations.csv` | Eight lifting-surface stations, local twists and global leading-edge positions |
+| `geometry_data/wing_bays.csv` | Five lifting-surface bays |
+| `geometry_data/fuselage_sections.csv` | 60 section centres, widths and heights |
+| `geometry_data/*.dat` | Eight station-specific airfoil files with thickness/camber scaling already applied |
+| `output/*.vsp3` | Generated parametric OpenVSP models |
+| `output/*.build.json` | Build metadata and reference quantities |
 
-CSV and .dat files are inside geometry_data. JSON contains only the modeled
-side of symmetric components; symmetry metadata specifies the mirrored side.
+The parser extracts all source components even when the selected builder only uses the wing and tails. JSON contains the modelled side of symmetric components; symmetry metadata specifies the mirrored side. See `CSV_INTERFACE.md` for the CSV contract.
+
+## Troubleshooting
+
+| Symptom | Check / fix |
+|---|---|
+| `No suitable Python runtime found` | Install Python 3.11 64-bit before creating this venv |
+| `No matching distribution found for degen_geom/openvsp_config` | Install the bundled requirements from OpenVSP's `python` directory, not only the `openvsp` subfolder |
+| Cannot import `_vsp` / partially initialised `openvsp` | Check Python version/architecture, presence of the original `_vsp.pyd`, and the editable installation above |
+| DLL-load failure | Follow the distribution README for native dependencies; confirm the interpreter matches the binary |
+| Missing `tqdm` | Run `python -m pip install tqdm` in the project venv |
+| Old errors such as `v.FUSE_FREE` or millions of insertions | Replace outdated builder copies with the corrected scripts; the current full builder uses numeric ordering policies and bounded section insertion |
+| No `.vsp3` after a failed check | Expected: validation must pass before the model is saved; inspect the reported parameter mismatch |
+
+## Version control
+
+Keep `.venv`, generated exports and local credentials out of Git. Suggested `.gitignore`:
+
+```gitignore
+.venv/
+__pycache__/
+*.py[cod]
+.env
+output/
+geometry_data/
+```
+
+Keep the Python sources, documentation, dependency list and example XML tracked. Do not commit the downloaded OpenVSP distribution. Each collaborator installs the API locally.
 
 ## Geometry interpretation
 
@@ -84,28 +249,10 @@ reference area. The VTP tip LE is (49.6351431473, 0, 8.65019216753) m after the
 90-degree component rotation. The 0 and 49.613 m fuselage endpoints were checked.
 These are internal consistency checks, not TiGL/OpenVSP shape validation.
 
-## Next: OpenVSP adapter
+## Geometry builder notes and remaining work
 
-1. Retain component transforms separately from local station geometry.
-2. Make three wing-type components: wing, HTP, VTP. Enable x-z symmetry only
-   where specified. Apply the VTP's 90-degree component rotation exactly once.
-3. Map CPACS segments to OpenVSP wing sections, and CPACS elements to airfoil
-   cross sections. Derive bay spans, LE sweep and dihedral from station offsets;
-   do not use CPACS positioning length as the OpenVSP span. Check the installed
-   API's span projection, twist sign/pivot and dihedral rotation settings before
-   assigning these values. Avoid rotating airfoil cross sections with dihedral
-   if CPACS only translates their positions.
-4. Import station .dat profiles, set chords, and preserve local y-axis twists.
-   Check the OpenVSP twist pivot against the CPACS profile origin (LE here).
-5. Build the fuselage from its contour/station data; its loft need not exactly
-   reproduce TiGL interpolation. First compare top/side/front views.
-6. Make explicit WB, WBH, WBV and WBHV analysis sets. Use the same aircraft
-   coefficient references when later subtracting aerodynamic derivatives.
-7. Reuse the old geometry-generation and execution modules after their actual
-   Python source and the installed OpenVSP binding version are available.
+The adapter derives OpenVSP bay span from sqrt(dy² + dz²), sweep from atan2(dx, span), and dihedral from atan2(dz, dy). Component transforms are applied once. Absolute section twist/dihedral and leading-edge twist pivots are used, with automatic airfoil dihedral rotation and thickness correction disabled. Station DAT scaling must not be applied a second time.
 
-The knowledge-transfer Markdown documents the old architecture but does not
-contain the source modules. No old functions have been copied or tested here.
-The ADB/load/deformation/trim logic is not needed for this initial rigid geometry.
-Masses, CG cases, mission/operating data and aerodynamic derivatives remain
-subsequent Lab 2 tasks.
+The supplied VSPAERO_module.py provided the station/airfoil construction pattern. These rigid-geometry builders do not import its ADB, deformation, trim or load-processing dependencies.
+
+The verification above concerns parser consistency. API import has been confirmed, but final surface shape, fuselage loft, intersections and aerodynamic meshing still require validation in the installed OpenVSP version. Masses, CG cases, mission/operating data and VSPAERO aerodynamic derivatives remain subsequent Lab 2 tasks.
