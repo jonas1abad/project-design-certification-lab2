@@ -16,7 +16,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--mode', choices=('wing-tail', 'all'), default='all',
                         help='wing-tail: wing, HTP and VTP; all: include fuselage (default)')
-    parser.add_argument('--xml', type=Path, default=ROOT / 'toolOutput.xml')
+    parser.add_argument('--xml', type=Path, default=ROOT / 'inputs' / 'toolOutput.xml')
     parser.add_argument('--data-dir', type=Path, default=ROOT / 'geometry_data')
     parser.add_argument('--output', type=Path, help='Optional output path; defaults depend on --mode')
     parser.add_argument('--api-dir', type=Path, help='Optional directory containing the OpenVSP binding')

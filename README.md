@@ -144,7 +144,7 @@ python main.py --mode wing-tail --xml "C:\MyProject\toolOutput.xml" --output "C:
 python main.py --mode all --chordwise 41 --spanwise 16
 
 # Run only the parser:
-python parse_cpacs_geometry.py toolOutput.xml --out geometry_data
+python parse_cpacs_geometry.py inputs/toolOutput.xml --out geometry_data
 ```
 
 Default paths resolve relative to `main.py`; explicit relative paths resolve from the terminal's working directory. CSV and DAT files must stay together. Progress bars advance between API calls; a single slow OpenVSP call can pause a bar. The model is saved only after the build and parameter checks pass. Existing exports at the selected paths are overwritten, so save manual edits under a different filename.
