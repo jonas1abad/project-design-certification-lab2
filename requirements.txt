@@ -1,0 +1,3 @@
+# Parser dependency. Follow the OpenVSP distribution's NumPy constraints if any.
+numpy
+# Install the official OpenVSP API separately from its downloaded distribution.
