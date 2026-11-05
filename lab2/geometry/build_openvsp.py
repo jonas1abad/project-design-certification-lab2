@@ -11,6 +11,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+from lab2.paths import PROJECT_ROOT
+
 try:
     from tqdm import tqdm
 except ImportError:
@@ -163,6 +165,7 @@ class Builder:
                 v.Update()
         self.set(gid, 'Tess_W', 'Shape', self.chordwise)
         self.placement(gid, rows[0])
+        self.set(gid, 'Wake', 'Shape', 1)
         v.Update()
         return gid
 
@@ -226,8 +229,8 @@ class Builder:
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('csv', nargs='?', type=Path, default=Path(__file__).parent/'geometry_data/openvsp_input.csv')
-    p.add_argument('--output', type=Path, default=Path('Lab2_aircraft.vsp3'))
+    p.add_argument('csv', nargs='?', type=Path, default=PROJECT_ROOT/'geometry_data/openvsp_input.csv')
+    p.add_argument('--output', type=Path, default=PROJECT_ROOT/'output'/'Lab2_aircraft.vsp3')
     p.add_argument('--api-dir', type=Path, help='Directory containing the official openvsp or vsp binding')
     p.add_argument('--validate-only', action='store_true', help='Validate CSV without importing OpenVSP')
     p.add_argument('--chordwise', type=int, default=41)

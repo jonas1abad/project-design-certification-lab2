@@ -1,7 +1,7 @@
 """Extract this lab's VAMPzero CPACS geometry without OpenVSP or TiGL.
 
 Python 3.10+, numpy. Usage:
-  python parse_cpacs_geometry.py toolOutput.xml --out geometry_data
+  python -m lab2.geometry.parse_cpacs_geometry inputs/toolOutput.xml --out geometry_data
 
 This is a deliberately constrained VAMPzero reader, not a full CPACS engine.
 It preserves transforms and exports section contours, not a TiGL loft.

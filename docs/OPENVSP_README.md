@@ -1,28 +1,28 @@
 # Lab 2: CSV to OpenVSP
 
-Workflow: toolOutput.xml -> parse_cpacs_geometry.py -> geometry_data/openvsp_input.csv -> build_openvsp.py -> Lab2_aircraft.vsp3.
+Workflow: inputs/toolOutput.xml -> parse_cpacs_geometry.py -> geometry_data/openvsp_input.csv -> build_openvsp.py -> Lab2_aircraft.vsp3.
 
 ## Run
 
 Use the Python version supported by your official OpenVSP distribution (the lab guide names OpenVSP 3.40.1). Install its Python API following that distribution's instructions. Do not install an unrelated package named vsp. This builder imports `openvsp`, falling back to `vsp` for your older binding style.
 
-From this folder:
+From the repository root:
 
 ```bash
-python build_openvsp.py --validate-only
-python build_openvsp.py --api-dir "C:/path/to/OpenVSP/python" --output Lab2_aircraft.vsp3
+python -m lab2.geometry.build_openvsp --validate-only
+python -m lab2.geometry.build_openvsp --api-dir "C:/path/to/OpenVSP/python" --output Lab2_aircraft.vsp3
 ```
 
 `--api-dir` must point to the directory from which `import openvsp` or `import vsp` works; omit it if installed already. Native library/DLL dependencies must also be configured according to your distribution. To use another CSV:
 
 ```bash
-python build_openvsp.py geometry_data/openvsp_input.csv --output output/Lab2_aircraft.vsp3 --chordwise 41 --spanwise 16
+python -m lab2.geometry.build_openvsp geometry_data/openvsp_input.csv --output output/Lab2_aircraft.vsp3 --chordwise 41 --spanwise 16
 ```
 
 Run the existing XML parser if you change the XML (requires NumPy):
 
 ```bash
-python parse_cpacs_geometry.py path/to/toolOutput.xml --out geometry_data
+python -m lab2.geometry.parse_cpacs_geometry path/to/toolOutput.xml --out geometry_data
 ```
 
 ## What it builds
@@ -60,7 +60,7 @@ Sources checked: official OpenVSP API Geom and XSec documentation, plus OpenVSP_
 
 ## Validation and remaining checks
 
-CSV validation and independent reconstruction of station origins from the adapter's span/sweep/dihedral mapping passed on the supplied data. Python compilation passed. OpenVSP is not installed in the authoring environment, so actual API execution, .vsp3 creation and surface comparison remain untested.
+CSV validation and independent reconstruction of station origins from the adapter's span/sweep/dihedral mapping passed on the supplied data. Python compilation passed. Local execution with Python 3.11.9 and OpenVSP 3.43.0 passed for both wing-tail and full modes. See the verification outputs and README for current full-build status; TiGL surface comparison remains outstanding.
 
 The builder fails on missing parameters, API errors or changed/clamped parameter values; it reads back fuselage widths/heights after update as well. It clears the in-memory OpenVSP model at startup; run as a separate Python process. The output path is overwritten if it exists.
 

@@ -1,0 +1,90 @@
+{
+  "model": "../output/Lab2_aircraft.vsp3",
+  "geometry_csv": "../geometry_data/openvsp_input.csv",
+  "section_a_csv": "../geometry_data/section_a.csv",
+  "output_root": "../output/grid_study",
+  "api_version": "3.43.0",
+  "api_dir": null,
+  "vspaero_dir": null,
+  "methods": [
+    "VLM",
+    "PANEL"
+  ],
+  "configurations": [
+    "WB",
+    "WBH",
+    "WBV",
+    "WBHV"
+  ],
+  "flow": {
+    "source": "section_a",
+    "note": "Aircraft cruise values. Guide examples use M=0.001 and Re=1e7, not a mandated cruise condition."
+  },
+  "moment_reference": "cpacs_reference",
+  "cases": [
+    {
+      "name": "reference",
+      "alpha_deg": 0.0,
+      "beta_deg": 0.0
+    }
+  ],
+  "robustness_alpha_deg": [
+    -5,
+    0,
+    5,
+    10
+  ],
+  "robustness_beta_deg": [
+    0,
+    3
+  ],
+  "stability": true,
+  "threads": 2,
+  "wake": {
+    "fixed": false,
+    "nodes": 128,
+    "iterations": 3
+  },
+  "wake_node_iterations": 12,
+  "wake_node_levels": [
+    32,
+    64,
+    128
+  ],
+  "wake_iteration_levels": [
+    6,
+    12,
+    18
+  ],
+  "cap_tessellation": 3,
+  "mesh_levels": [
+    {
+      "name": "coarse",
+      "chordwise": 17,
+      "fuselage_w": 17,
+      "fuselage_spacing_m": 1.0,
+      "lifting_spacing_m": 0.5
+    },
+    {
+      "name": "medium",
+      "chordwise": 25,
+      "fuselage_w": 25,
+      "fuselage_spacing_m": 0.65,
+      "lifting_spacing_m": 0.35
+    },
+    {
+      "name": "fine",
+      "chordwise": 33,
+      "fuselage_w": 33,
+      "fuselage_spacing_m": 0.4,
+      "lifting_spacing_m": 0.25
+    },
+    {
+      "name": "finest",
+      "chordwise": 49,
+      "lifting_spacing_m": 0.175,
+      "fuselage_w": 49,
+      "fuselage_spacing_m": 0.28
+    }
+  ]
+}

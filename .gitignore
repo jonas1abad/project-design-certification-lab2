@@ -4,3 +4,4 @@ __pycache__/
 .env
 output/
 geometry_data/
+outputs/

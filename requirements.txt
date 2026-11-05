@@ -1,3 +1,4 @@
-# Parser dependency. Follow the OpenVSP distribution's NumPy constraints if any.
+# Follow the NumPy constraints supplied with your OpenVSP distribution.
 numpy
+tqdm
 # Install the official OpenVSP API separately from its downloaded distribution.

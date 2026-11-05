@@ -2,7 +2,7 @@
 
 Run with Python 3.10+ and NumPy:
 
-    python parse_cpacs_geometry.py toolOutput.xml --out geometry_data
+    python -m lab2.geometry.parse_cpacs_geometry inputs/toolOutput.xml --out geometry_data
 
 The primary output is `geometry_data/openvsp_input.csv`. Keep the .dat files
 alongside it. The OpenVSP builder will read this CSV; it does not need to parse
