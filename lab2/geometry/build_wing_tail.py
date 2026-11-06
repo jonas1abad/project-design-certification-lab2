@@ -13,6 +13,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from lab2.paths import PROJECT_ROOT
+from .airfoil import validate_selig_airfoil
 
 try:
     from tqdm import tqdm
@@ -52,6 +53,7 @@ def load_geometry(path):
                     raise ValueError(f'{uid}: nonpositive chord')
                 if not (path.parent / r['airfoil_file']).is_file():
                     raise FileNotFoundError(r['airfoil_file'])
+                validate_selig_airfoil(path.parent / r['airfoil_file'])
                 if abs(number(r, 'twist_pivot_chord_fraction')) > 1e-10:
                     raise ValueError('Only leading-edge CPACS twist pivots supported')
             elif r['geometry_type'] != 'fuselage':

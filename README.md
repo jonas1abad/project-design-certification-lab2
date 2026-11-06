@@ -101,7 +101,7 @@ The saved **study models** receive the analysis references and flow conditions. 
 
 Geometry building, concise Section A extraction and native solver launching are implemented. A reduced PANEL diagnostic completed after excluding the visible TiGL STL reference mesh from the solver copy. Full mesh/wake convergence and aerodynamic validation remain work to assess from the study results.
 
-The native-file result parser and plotter are the next workflow. The archived prototype under `tools/experimental` uses an obsolete output format and is not ready for current studies. A final production-run launcher will follow selection of the mesh and wake settings.
+Run `main_plot_grid_study.py` to compare completed surface runs. Edit its settings to select the study and VLM/PANEL. It reads native `.history` and `.stab` files, takes mesh counts from `solver.log`, and saves PNG/PDF figures plus a comparison CSV. The archived prototype under `tools/experimental` uses an obsolete output format. Wake plotting, load-distribution parsing and the final production-run launcher remain separate next steps.
 
 The supplied source data retain two Section A discrepancies: component OEM masses exceed the stated OEM by about 896.664 kg, and the take-off CG lies aft of the supplied certification-case envelope. These are recorded in `section_a.csv`; no values are silently corrected.
 
@@ -113,3 +113,7 @@ The supplied source data retain two Section A discrepancies: component OEM masse
 - [Geometry interpretation](docs/GEOMETRY_NOTES.md)
 - [Grid studies and solver outputs](docs/GRID_STUDY.md)
 - [Historical geometry verification, 1 November 2026](docs/VERIFICATION.md)
+
+## Airfoil orientation correction (6 November 2026)
+
+Earlier exports preserved clockwise CPACS point order in Selig DAT files. This retained the visible outline but inverted the wing/tail surface orientation, producing negative signed volumes in CompGeom and invalid PANEL solutions. The parser now exports upper-TE to LE to lower-TE (positive signed x-z area), and both builders reject stale DAT ordering. Re-extract from XML and rebuild any models made with the earlier version; changing the viewer's normals does not repair the saved solver geometry. Existing aerodynamic results are provisional or invalid and must be rechecked with rebuilt geometry. The geometry-only branch contains the same correction.

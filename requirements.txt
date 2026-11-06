@@ -1,4 +1,5 @@
 # Follow the NumPy constraints supplied with your OpenVSP distribution.
 numpy
 tqdm
+matplotlib
 # Install the official OpenVSP API separately from its downloaded distribution.

@@ -13,6 +13,8 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 import numpy as np
 
+from .airfoil import selig_coordinates
+
 
 def vector(node, path, default=0):
     return np.array([float(node.findtext(f'{path}/{a}', str(default))) for a in 'xyz'])
@@ -208,7 +210,7 @@ def parse_geometry(xml_path, out_path):
                     if not np.allclose(sm[:3, 3], 0) or not np.allclose(vector(section, 'transformation/rotation')[[0, 2]], 0):
                         raise ValueError('Station summary expects section twist only about y')
                     scale = vector(section, 'transformation/scaling', 1) * vector(element, 'transformation/scaling', 1)
-                    normalized = profile[:, [0, 2]] * [1, scale[2]/scale[0]]
+                    normalized = np.array(selig_coordinates(profile[:, [0, 2]] * [1, scale[2]/scale[0]]))
                     np.savetxt(output/f'{eid}.dat', normalized, fmt='%.12g', header=eid, comments='')
                     item.update(chord_m=chord, leading_edge_global_m=le.tolist(),
                                 normalized_profile_xz=normalized.tolist())

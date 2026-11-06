@@ -265,18 +265,29 @@ def run_task(task_file):
     api_errors(v, 'Compute solver geometry')
     if not geometry_id:
         raise RuntimeError('Geometry analysis returned no result')
+    if task['method'] == 'PANEL':
+        from .mesh import check_panel_mesh
+        save_json(input_folder / 'panel_mesh_check.json',
+                  check_panel_mesh(folder / 'model_VSPGeom.vspgeom'))
     geometry_seconds = time.perf_counter() - t0
     t0 = time.perf_counter()
     basename = 'model_VSPGeom' if task['method'] == 'PANEL' else 'model_DegenGeom'
     write_solver_case(folder / (basename + '.vspaero'), task)
     launch_solver(exe_dir / 'vspaero.exe', folder, basename, cfg['threads'], cfg['stability'])
     solver_seconds = time.perf_counter() - t0
+    from .postprocess import read_history, read_stability
+    history = read_history(folder / (basename + '.history'))
+    if set(history) != set(range(1, 8) if cfg['stability'] else [1]):
+        raise RuntimeError('Solver history is missing requested cases')
+    if cfg['stability']:
+        read_stability(folder / (basename + '.stab'))
     save_json(folder / 'result.json', {'status': 'completed', 'run_id': task['run_id'],
               'api_version': version, 'source_model_sha256': cfg['model_sha256'],
               'membership': membership, 'geometry_seconds': geometry_seconds,
               'solver_seconds': solver_seconds,
               'model_file': str(prepared),
               'mesh_settings': task['mesh'], 'wake_settings': task['wake'],
+              'finite_output_check': 'Native history and stability values checked; this is not convergence acceptance.',
               'result_source': 'Native .history, .lod and .stab files; parsing deferred to postprocessing.',
               'convergence': 'Not automatically accepted. Review native solver files.'})
     print('Completed', task['run_id'], flush=True)

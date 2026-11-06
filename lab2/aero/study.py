@@ -226,31 +226,46 @@ def study_directory_name(tasks):
     return identifier(name)
 
 
-def execute_tasks(tasks, output_root, prefix='study'):
+def execute_tasks(tasks, output_root, prefix='study', resume_name=None, start_case=1):
     folder = Path(output_root).resolve()
-    base_name = study_directory_name(tasks)
+    base_name = identifier(resume_name) if resume_name else study_directory_name(tasks)
     run_name = base_name
     repeat = 2
-    while any((folder / branch / run_name).exists() for branch in ('input', 'outputs')):
+    while not resume_name and any((folder / branch / run_name).exists() for branch in ('input', 'outputs')):
         run_name = f'{base_name}_{repeat:02d}'
         repeat += 1
     input_run = folder / 'input' / run_name
     output_run = folder / 'outputs' / run_name
-    input_run.mkdir(parents=True)
-    output_run.mkdir(parents=True)
-    for i, task in enumerate(tasks, 1):
-        model_name = f'model_{i:03d}_{identifier(task["run_id"])}'
-        task['input_directory'] = str(input_run / model_name)
-        task['output_directory'] = str(output_run / model_name)
+    if resume_name:
+        threads = tasks[0]['settings']['threads']
+        planned_ids = [task['run_id'] for task in tasks]
+        tasks = json.loads((input_run / 'plan.json').read_text())['tasks']
+        if [task['run_id'] for task in tasks] != planned_ids:
+            raise ValueError('Resume selection differs from the saved plan; match stage/method/configuration first')
+        if not 1 <= start_case <= len(tasks):
+            raise ValueError('START_CASE is outside the saved plan')
+        for task in tasks[start_case - 1:]:
+            task['settings']['threads'] = threads
+        print(f'Resuming case {start_case}/{len(tasks)} with {threads} CPU threads; saved geometry/flow/wake settings retained.', flush=True)
+    else:
+        start_case = 1
+        input_run.mkdir(parents=True)
+        output_run.mkdir(parents=True)
+        for i, task in enumerate(tasks, 1):
+            model_name = f'model_{i:03d}_{identifier(task["run_id"])}'
+            task['input_directory'] = str(input_run / model_name)
+            task['output_directory'] = str(output_run / model_name)
     save_json(input_run / 'plan.json', {'stage': prefix, 'tasks': tasks})
     print(f'{len(tasks)} sequential solver runs. Inputs: {input_run}', flush=True)
     print(f'Solver outputs: {output_run}', flush=True)
     from .runner import run_task
 
     for i, task in enumerate(tasks, 1):
+        if i < start_case:
+            continue
         target = Path(task['input_directory'])
-        target.mkdir(parents=True)
-        Path(task['output_directory']).mkdir(parents=True)
+        target.mkdir(parents=True, exist_ok=bool(resume_name))
+        Path(task['output_directory']).mkdir(parents=True, exist_ok=bool(resume_name))
         save_json(target / 'task.json', task)
         print(f'[{i}/{len(tasks)}] {task["run_id"]}', flush=True)
         run_task(target / 'task.json')

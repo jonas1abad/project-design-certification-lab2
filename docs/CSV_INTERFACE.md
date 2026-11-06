@@ -71,3 +71,7 @@ Validation on the supplied XML: all 68 CSV stations, 8 referenced airfoil files,
 5 incoming wing bays, and reconstruction of every exported wing contour from
 the CSV were checked. Reconstructed wing planform area matches 122.6 m2.
 OpenVSP generation is the next stage and has not been run.
+
+## DAT traversal and surface normals
+
+Airfoils are exported in Selig order: upper trailing edge, leading edge, lower trailing edge. The x-z polygon has positive signed area. Source CPACS coordinates remain in the source contour record; reversing their exported traversal changes no coordinate, scale or camber. Builder validation rejects the older clockwise DAT exports, which can look correct but produce inward normals and negative signed wing/tail volumes. Regenerate the DATs with the current parser before building. Parameter readback and visual overlays alone do not validate orientation.

@@ -16,6 +16,8 @@ CONFIGURATION = None          # None runs all, or choose 'WB', 'WBH', 'WBV', 'WB
 WAKE_NODES = None             # Base count when nodes are not being swept; e.g. 64
 WAKE_ITERATIONS = None        # Base count when iterations are not being swept
 OUTPUT_ROOT = None            # None uses output_root from CONFIG_FILE
+RESUME_STUDY = None           # Existing study name; None starts a new study
+START_CASE = 1                # One-based case number when resuming; reruns this case
 
 def main():
     if STAGE not in ('surface', 'wake-nodes', 'wake-iterations'):
@@ -54,7 +56,9 @@ def main():
     if not tasks:
         raise ValueError('No solver runs selected')
     output_root = Path(OUTPUT_ROOT).resolve() if OUTPUT_ROOT else Path(cfg['output_root'])
-    folder = execute_tasks(tasks, output_root, prefix=STAGE.replace('-', '_'))
+    print(f'Solver CPU threads per run: {cfg["threads"]}', flush=True)
+    folder = execute_tasks(tasks, output_root, prefix=STAGE.replace('-', '_'),
+                           resume_name=RESUME_STUDY, start_case=START_CASE)
     print(f'Study folder: {folder}', flush=True)
     print('All requested runs completed. Inspect their .vsp3 models and solver outputs before choosing a mesh.', flush=True)
     return 0
