@@ -61,3 +61,7 @@ The adapter derives OpenVSP bay span from sqrt(dyÂ² + dzÂ²), sweep from atan
 The supplied VSPAERO_module.py provided the station/airfoil construction pattern. These rigid-geometry builders do not import its ADB, deformation, trim or load-processing dependencies.
 
 The checks above concern parser consistency. Both builder modes have run with Python 3.11.9 and OpenVSP 3.43.0. A visual TiGL overlay comparison was performed for the original lab aircraft; new inputs still need inspection of the surface shape, fuselage loft and intersections. This branch does not perform aerodynamic analysis.
+
+## DAT traversal and surface normals
+
+Airfoils are exported in Selig order: upper trailing edge, leading edge, lower trailing edge. The x-z polygon has positive signed area. Source CPACS coordinates remain in the source contour record; reversing their exported traversal changes no coordinate, scale or camber. Builder validation rejects the older clockwise DAT exports, which can look correct but produce inward normals and negative signed wing/tail volumes. Regenerate the DATs with the current parser before building. Parameter readback and visual overlays alone do not validate orientation.

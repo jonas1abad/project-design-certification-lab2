@@ -79,3 +79,7 @@ For the example XML, extraction gives 68 stations: 4 wing, 2 horizontal-tail, 2 
 - [OpenVSP adapter details](docs/OPENVSP_README.md)
 
 The branch shares Git history with the main lab project, but its current checkout is limited to geometry tools.
+
+## Airfoil orientation correction (6 November 2026)
+
+Earlier exports preserved clockwise CPACS point order in Selig DAT files. This retained the visible outline but inverted the wing/tail surface orientation, producing negative signed volumes in CompGeom and invalid PANEL solutions. The parser now exports upper-TE to LE to lower-TE (positive signed x-z area), and both builders reject stale DAT ordering. Re-extract from XML and rebuild any models made with the earlier version; changing the viewer's normals does not repair the saved solver geometry. Existing aerodynamic results are provisional or invalid and must be rechecked with rebuilt geometry. The geometry-only branch contains the same correction.
