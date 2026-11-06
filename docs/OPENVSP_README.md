@@ -45,9 +45,9 @@ Uses the station insertion / file-airfoil / parameter-driver pattern in the supp
 Two details are corrected explicitly:
 
 - The driver section index for XSec_1 is 1, following the official API examples (the supplied helper used i1-1).
-- OpenVSP Span is sqrt(dy²+dz²). Leading-edge sweep is atan2(dx, Span), since OpenVSP applies sweep offset using that span. CSV bay_sweep_le_deg is projected sweep atan2(dx,dy) and cannot be copied unchanged for dihedral bays.
+- OpenVSP Span is sqrt(dyÂ²+dzÂ²). Leading-edge sweep is atan2(dx, Span), since OpenVSP applies sweep offset using that span. CSV bay_sweep_le_deg is projected sweep atan2(dx,dy) and cannot be copied unchanged for dihedral bays.
 
-Local twist uses the same y-axis rotation sign as the CPACS transformations. Absolute twist/dihedral are selected; airfoil rotation to match dihedral and thickness correction are disabled. The whole-component rotation is applied once, including the wing +4° y rotation and VTP +90° x rotation. Rotation origin is set at the local leading-edge origin. DAT ordinate scaling is not applied a second time.
+Local twist uses the same y-axis rotation sign as the CPACS transformations. Absolute twist/dihedral are selected; airfoil rotation to match dihedral and thickness correction are disabled. The whole-component rotation is applied once, including the wing +4Â° y rotation and VTP +90Â° x rotation. Rotation origin is set at the local leading-edge origin. DAT ordinate scaling is not applied a second time.
 
 Fuselage Y/Z offsets are divided by the fuselage length for OpenVSP's percentage-location parameters. Zero-size end sections use POINT; the others use ELLIPSE.
 
@@ -60,7 +60,7 @@ Sources checked: official OpenVSP API Geom and XSec documentation, plus OpenVSP_
 
 ## Validation and remaining checks
 
-CSV validation and independent reconstruction of station origins from the adapter's span/sweep/dihedral mapping passed on the supplied data. Python compilation passed. Local execution with Python 3.11.9 and OpenVSP 3.43.0 passed for both wing-tail and full modes. See the verification outputs and README for current full-build status; TiGL surface comparison remains outstanding.
+CSV validation and independent reconstruction of station origins from the adapter's span/sweep/dihedral mapping passed on the supplied data. Python compilation passed. Local execution with Python 3.11.9 and OpenVSP 3.43.0 passed for both wing-tail and full modes. A visual TiGL overlay comparison was performed for the original lab aircraft; numerical surface equivalence is not established.
 
 The builder fails on missing parameters, API errors or changed/clamped parameter values; it reads back fuselage widths/heights after update as well. It clears the in-memory OpenVSP model at startup; run as a separate Python process. The output path is overwritten if it exists.
 

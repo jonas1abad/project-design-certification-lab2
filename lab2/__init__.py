@@ -1,1 +1,1 @@
-"""Aircraft geometry, source data and aerodynamic study modules."""
+"""VAMPzero CPACS geometry extraction and OpenVSP model generation."""

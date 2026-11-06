@@ -56,8 +56,8 @@ These are internal consistency checks, not TiGL/OpenVSP shape validation.
 
 ## Geometry builder notes and remaining work
 
-The adapter derives OpenVSP bay span from sqrt(dy² + dz²), sweep from atan2(dx, span), and dihedral from atan2(dz, dy). Component transforms are applied once. Absolute section twist/dihedral and leading-edge twist pivots are used, with automatic airfoil dihedral rotation and thickness correction disabled. Station DAT scaling must not be applied a second time.
+The adapter derives OpenVSP bay span from sqrt(dyÂ² + dzÂ²), sweep from atan2(dx, span), and dihedral from atan2(dz, dy). Component transforms are applied once. Absolute section twist/dihedral and leading-edge twist pivots are used, with automatic airfoil dihedral rotation and thickness correction disabled. Station DAT scaling must not be applied a second time.
 
 The supplied VSPAERO_module.py provided the station/airfoil construction pattern. These rigid-geometry builders do not import its ADB, deformation, trim or load-processing dependencies.
 
-The verification above concerns parser consistency. API import has been confirmed, but final surface shape, fuselage loft, intersections and aerodynamic meshing still require validation in the installed OpenVSP version. Section A extraction and the aerodynamic grid-study workflow are now implemented; full stability-result postprocessing is still pending.
+The checks above concern parser consistency. Both builder modes have run with Python 3.11.9 and OpenVSP 3.43.0. A visual TiGL overlay comparison was performed for the original lab aircraft; new inputs still need inspection of the surface shape, fuselage loft and intersections. This branch does not perform aerodynamic analysis.

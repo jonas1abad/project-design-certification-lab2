@@ -1,115 +1,81 @@
-# UC3M Aircraft Design & Certification — Lab 2
+# VAMPzero XML to OpenVSP geometry
 
-Build a parametric OpenVSP aircraft from CPACS, extract the requested Section A data, and run sequential VLM/PANEL mesh and wake studies.
+This geometry-only branch contains the XML parser and editable OpenVSP model builders used for the UC3M Aircraft Design & Certification Lab 2. It includes the original example `inputs/toolOutput.xml` so the workflow can be run immediately after setup.
 
-## Project layout
+The parser reads the supplied **VAMPzero CPACS 2.0 layout**, exports station geometry and airfoil files, and builds the wing, horizontal tail, vertical tail and fuselage. This is a constrained translator for this aircraft layout, not a general CPACS importer. Component UIDs `wing`, `htp`, `vtp` and `fuselage` and the supported transformations must match the builder's assumptions. Different XML layouts may require changes; unsupported cases raise errors.
 
-```text
-main_geom_builder.py       Geometry + Section A workflow
-main_grid_study.py         Edit settings here, then run the study
-main.py                    Compatibility entry point for geometry
-lab2/
-  geometry/                CPACS parser and OpenVSP builders
-  section_a.py             Concise Section A CSV extraction
-  aero/study.py            Configuration, refinement calculations and run planning
-  aero/runner.py           Solver preparation and live native VSPAERO launch
-configs/grid_study.json    Mesh levels, flow source and solver defaults
-inputs/toolOutput.xml      Example CPACS input
-geometry_data/             Generated geometry CSV/DAT and section_a.csv (ignored)
-output/                    Generated models and solver files (ignored)
-docs/                      Installation, geometry interface and study notes
-tools/experimental/        Archived plotting prototype; not part of the workflow
+## Get this branch
+
+```powershell
+git clone --branch geometry-builder --single-branch https://github.com/jonas1abad/project-design-certification-lab2.git
+cd project-design-certification-lab2
 ```
 
-Keep the Python sources and configuration in Git. Generated models, solver outputs, local environments and diagnostic files are ignored.
+Alternatively select **geometry-builder** on GitHub and use **Code > Download ZIP**. Repository access is still required if the repository is private.
 
 ## Setup
 
-The current integration targets **OpenVSP 3.43.0, Python 3.11, Windows x64**. Python's version and architecture must match the compiled OpenVSP API. Install the API and its companion packages from the official distribution rather than an unrelated PyPI package.
+The verified native build uses **OpenVSP 3.43.0 x64 with Python 3.11.9**. Install the official OpenVSP distribution and its matching Python binding; this repository does not bundle OpenVSP. Other versions have not been verified here. See [Windows setup](docs/SETUP_WINDOWS.md) for the environment and API installation commands.
 
-See [Windows setup](docs/SETUP_WINDOWS.md) for environment creation and API installation. Project dependencies are `numpy` and `tqdm`; plotting dependencies are optional and separate.
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
 
-## Build geometry and extract Section A
+Follow the OpenVSP distribution's NumPy constraints if present. Do not install an unrelated package named `vsp` from PyPI. Select `.venv/Scripts/python.exe` as the VS Code interpreter.
 
-Run `main_geom_builder.py` in your compatible environment. `main.py` remains an alias for the same workflow.
+## Run
+
+Open `main_geom_builder.py` and edit the settings at the top, then run it from VS Code. The defaults use the example XML and create the complete aircraft:
 
 ```powershell
 python main_geom_builder.py
 ```
 
-The sequential steps are:
+`python main.py` is an equivalent shortcut. To use a colleague's XML:
 
-1. Parse `inputs/toolOutput.xml` into `geometry_data`.
-2. Export the requested masses, CG limits, reference quantities and available operating values to `geometry_data/section_a.csv`.
-3. Build `output/Lab2_aircraft.vsp3`, with wing, HTP, VTP and fuselage.
+```powershell
+python main_geom_builder.py --xml "C:/my-aircraft/toolOutput.xml"
+```
 
-For the lifting surfaces only:
+To build only the wing and tails, without the fuselage:
 
 ```powershell
 python main_geom_builder.py --mode wing-tail
 ```
 
-The full model has sets `WB`, `WBH`, `WBV`, `WBHV`; the lifting-surface model has `W`, `WH`, `WV`, `WHV`. Airfoil DAT files stay alongside `openvsp_input.csv`.
-
-Operating values require a matching VAMPzero run. The launcher searches the local baseline and accepts it only if its companion XML matches the geometry input byte-for-byte. You can specify it explicitly:
-
-```powershell
-python main_geom_builder.py --vampzero "C:\MyRun\ReturnDirectory\VAMPzero.m" --companion-xml "C:\MyRun\ToolOutput\toolOutput.xml"
-```
-
-If no matching run is found, operating values are omitted and the launcher reports it. MATLAB assignments are read as numeric source data, never executed. The grid study needs the cruise data or explicit flow values in its configuration.
-
-To extract and check the CSVs without importing OpenVSP:
+For extraction and CSV validation without installing OpenVSP:
 
 ```powershell
 python main_geom_builder.py --validate-only
 ```
 
-Direct module commands are also available from the repository root:
+To run the XML parser independently:
 
 ```powershell
 python -m lab2.geometry.parse_cpacs_geometry inputs/toolOutput.xml --out geometry_data
-python -m lab2.geometry.build_openvsp --validate-only
-python -m lab2.section_a
 ```
 
-## Run a grid study
+The parser only needs NumPy; builders also need tqdm and the official OpenVSP API. All workflow stages use the same Python interpreter. Errors stop execution. Existing generated data and the chosen model file are overwritten.
 
-Edit the settings block at the top of **`main_grid_study.py`**, then run that file from your editor. No command-line options are required. The default selection runs both methods and all four body-containing configurations.
+## Outputs
 
-```python
-STAGE = 'surface'
-METHOD = None                 # Both methods; or 'VLM' / 'PANEL'
-CONFIGURATION = None          # All sets; or 'WB', 'WBH', 'WBV', 'WBHV'
-WAKE_ITERATIONS = None         # Surface default: 3
-```
+- `geometry_data/openvsp_input.csv`: primary station data consumed by the builder.
+- `geometry_data/*.dat`: eight station-specific airfoil files for the supplied XML; keep these alongside the CSV.
+- `geometry_data/geometry.json`, `wing_stations.csv`, `wing_bays.csv`, `fuselage_sections.csv`: extracted geometry for manual checks.
+- `output/Lab2_aircraft.vsp3`: full, parametrically editable aircraft, with WB/WBH/WBV/WBHV sets.
+- `output/Lab2_aircraft.build.json`: API version, station counts and reference quantities.
+- Wing-tail mode instead writes `output/Lab2_wing_tail.vsp3` and its build report.
 
-The workflow runs cases in sequence and stops at the first exception so the debugger can inspect it. Native solver progress appears live in the terminal and is also written to each case's `solver.log`.
+Generated files are ignored by Git. Open the `.vsp3` model in OpenVSP to inspect it. This branch contains geometry generation only; no Section A extraction, solver launching, grid study or result plotting. Aerodynamic reference values in the build report are not automatically applied to VSPAERO.
 
-Study order:
+## Geometry checks and limits
 
-1. Surface mesh sweep: `coarse`, `medium`, `fine`, `finest`, using three wake iterations.
-2. Wake-iteration sweep on a selected surface mesh: 6, 12, 18 iterations.
-3. Wake-node sweep using the selected surface mesh and iteration count: 32, 64, 128 nodes.
-4. Recheck the selected surface resolution with the selected wake settings.
+For the example XML, extraction gives 68 stations: 4 wing, 2 horizontal-tail, 2 vertical-tail and 60 fuselage. Profiles retain their station-specific scaling, and component transforms are applied once. The fuselage uses elliptical stations and OpenVSP loft interpolation; it is not a TiGL surface import. Inspect the nose, tail, intersections and loft before using a new aircraft for analysis. A visual TiGL overlay comparison was performed for the original lab aircraft; it is not a numerical proof of surface equivalence.
 
-See [grid-study settings and file layout](docs/GRID_STUDY.md) for editable spacing targets, formulas, references, output naming and wake-study examples.
+- [CSV schema and units](docs/CSV_INTERFACE.md)
+- [CPACS transformations and recovered dimensions](docs/GEOMETRY_NOTES.md)
+- [OpenVSP adapter details](docs/OPENVSP_README.md)
 
-The saved **study models** receive the analysis references and flow conditions. The original geometry-only model can still show GUI defaults. For the supplied cruise case, the study uses `Sref = 122.6 m²`, `bref = 35.793435 m`, `cref = 4.19 m`, `Mach = 0.78` and `ReCref ≈ 2.145e7`. The moment reference is the CPACS quarter-MAC point, `(20.752721, 0, 0) m`.
-
-## Current status and limits
-
-Geometry building, concise Section A extraction and native solver launching are implemented. A reduced PANEL diagnostic completed after excluding the visible TiGL STL reference mesh from the solver copy. Full mesh/wake convergence and aerodynamic validation remain work to assess from the study results.
-
-The native-file result parser and plotter are the next workflow. The archived prototype under `tools/experimental` uses an obsolete output format and is not ready for current studies. A final production-run launcher will follow selection of the mesh and wake settings.
-
-The supplied source data retain two Section A discrepancies: component OEM masses exceed the stated OEM by about 896.664 kg, and the take-off CG lies aft of the supplied certification-case envelope. These are recorded in `section_a.csv`; no values are silently corrected.
-
-## Further documentation
-
-- [Windows environment and installation](docs/SETUP_WINDOWS.md)
-- [Geometry CSV contract](docs/CSV_INTERFACE.md)
-- [OpenVSP builder details](docs/OPENVSP_README.md)
-- [Geometry interpretation](docs/GEOMETRY_NOTES.md)
-- [Grid studies and solver outputs](docs/GRID_STUDY.md)
-- [Historical geometry verification, 1 November 2026](docs/VERIFICATION.md)
+The branch shares Git history with the main lab project, but its current checkout is limited to geometry tools.

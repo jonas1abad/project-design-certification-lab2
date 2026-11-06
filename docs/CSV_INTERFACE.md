@@ -42,7 +42,7 @@ fuselage width/height. Do not mirror the VTP or rotate it a second time.
 Airfoil files already contain station-specific ordinate scaling (including
 camber). Do not apply the CPACS thickness scale again in the builder.
 
-## Reader pattern for the future OpenVSP script
+## Reader pattern for the OpenVSP script
 
     import csv
     from pathlib import Path
@@ -70,4 +70,4 @@ branched segment chains.
 Validation on the supplied XML: all 68 CSV stations, 8 referenced airfoil files,
 5 incoming wing bays, and reconstruction of every exported wing contour from
 the CSV were checked. Reconstructed wing planform area matches 122.6 m2.
-OpenVSP generation is the next stage and has not been run.
+The geometry builders have also been exercised with Python 3.11.9 and OpenVSP 3.43.0; inspect each generated model for loft and intersection differences.

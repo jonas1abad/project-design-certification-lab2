@@ -40,54 +40,24 @@ If a non-editable `openvsp` package is already installed and cannot find `_vsp.p
 
 The builder also accepts `--api-dir` for an existing compatible binding. Adding a path does not resolve a Python binary-version or DLL mismatch.
 
-## 3. Run the workflow
+## 3. Run the geometry workflow
 
-```bat
-python main.py
+```powershell
+python main_geom_builder.py
 ```
 
-Defaults resolve relative to main.py:
+The two stages parse `inputs/toolOutput.xml` into `geometry_data`, then build `output/Lab2_aircraft.vsp3`. Both use the selected Python interpreter. Paths default to the repository root, so they work when launched from VS Code as well.
 
-1. Parse `inputs/toolOutput.xml` into `geometry_data`.
-2. Extract Section A to `geometry_data/section_a.csv`, including operating values when a matching VAMPzero run is found (see README).
-3. Build `output/Lab2_aircraft.vsp3` from `geometry_data/openvsp_input.csv`.
+For another source or output:
 
-All three children use `sys.executable`, so they run with the same venv Python. If geometry or Section A extraction fails, the builder does not run. A builder failure is propagated; successful CSV parsing does not imply model generation succeeded. Existing exports and the selected model output are overwritten.
-
-Custom paths:
-
-```bat
-python main.py --xml "C:\MyProject\toolOutput.xml" --output "C:\MyProject\output\aircraft.vsp3"
+```powershell
+python main_geom_builder.py --xml "C:/MyProject/toolOutput.xml" --output "C:/MyProject/aircraft.vsp3"
 ```
 
-CSV-only check (does not need the OpenVSP API):
+To extract and validate without the native OpenVSP API:
 
-```bat
-python main.py --validate-only
+```powershell
+python main_geom_builder.py --validate-only
 ```
 
-If the API is imported through a directory instead of installed:
-
-```bat
-python main.py --api-dir "C:\path\to\binding-parent"
-```
-
-In VS Code select `.venv\Scripts\python.exe` with **Python: Select Interpreter**.
-
-## 4. Run the separate mesh study
-
-After `output/Lab2_aircraft.vsp3` and `geometry_data/section_a.csv` exist, set `STAGE = 'surface'` in the **USER SETTINGS** block at the top of `main_grid_study.py`, then run:
-
-```bat
-python main_grid_study.py
-```
-
-Runs execute in the main Python process. If one raises an error, the traceback appears in the debugger and later runs do not start. Models and settings are saved under `output/grid_study/input/<study_name>/model_XXX_...`; matching solver files are retained under `output/grid_study/outputs/<study_name>/model_XXX_...`. To run a wake sweep, edit `STAGE` to `'wake-nodes'` or `'wake-iterations'` and set `SELECTED_MESH` to the chosen level. Set `WAKE_NODES` to the selected count before the iteration sweep. Then run the same file again:
-
-```bat
-python main_grid_study.py
-```
-
-Set `METHOD` to `'VLM'` or `'PANEL'` to run just one solver method, and `CONFIGURATION` to `'WBHV'` to run just one component set. The launch script does not generate plots and does not parse `.adb` files.
-
-Official instructions: https://openvsp.org/pyapi_docs/latest/ (Python API Instructions). Read the release-specific README included in the download for exact compatibility.
+Use `--mode wing-tail` for the lifting surfaces only. `--api-dir "C:/path/to/binding-parent"` is available for a compatible binding not installed in the environment. Edit the top-of-file settings for VS Code runs without command-line arguments. Failed stages raise immediately; existing generated exports and the chosen output file are overwritten.
