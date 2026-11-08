@@ -9,9 +9,9 @@ from collections import defaultdict
 from pathlib import Path
 
 
-def read_history(path):
-    """Return the final wake iteration of every explicitly numbered solver case."""
-    cases = {}
+def read_history_iterations(path):
+    """Return the wake history of every explicitly numbered solver case."""
+    cases = defaultdict(list)
     case = None
     header = None
     for line in Path(path).read_text().splitlines():
@@ -30,10 +30,15 @@ def read_history(path):
                 raise ValueError(f'Unnumbered history table: {path}')
             if not all(map(math.isfinite, values)):
                 raise ValueError(f'Nonfinite solver output: {path}, case {case}, iteration {fields[0]}')
-            cases[case] = dict(zip(header, values))
+            cases[case].append(dict(zip(header, values)))
     if not cases:
         raise ValueError(f'No solver case in {path}')
-    return cases
+    return dict(cases)
+
+
+def read_history(path):
+    """Return the final wake iteration of every explicitly numbered solver case."""
+    return {case: iterations[-1] for case, iterations in read_history_iterations(path).items()}
 
 
 def read_stability(path):

@@ -182,14 +182,16 @@ def load_config(path):
 
 
 def make_plan(cfg, stage='surface', mesh=None):
-    if stage not in ('surface', 'wake-nodes', 'wake-iterations'):
+    if stage not in ('surface', 'final', 'wake-nodes', 'wake-iterations'):
         raise ValueError('Unknown study stage')
-    if stage == 'surface':
-        variants = [(level['name'], i, level, cfg['wake']) for i, level in enumerate(cfg['mesh_levels'])]
-    else:
-        levels = [level for level in cfg['mesh_levels'] if level['name'] == mesh]
+    levels = cfg['mesh_levels']
+    if stage != 'surface':
+        levels = [level for level in levels if level['name'] == mesh]
         if len(levels) != 1:
-            raise ValueError('Wake studies require a selected surface mesh level')
+            raise ValueError(f'{stage} requires one selected surface mesh level')
+    if stage in ('surface', 'final'):
+        variants = [(level['name'], i, level, cfg['wake']) for i, level in enumerate(levels)]
+    else:
         key = 'nodes' if stage == 'wake-nodes' else 'iterations'
         values = cfg['wake_node_levels'] if key == 'nodes' else cfg['wake_iteration_levels']
         variants = []
@@ -217,7 +219,7 @@ def study_directory_name(tasks):
     configurations = sorted({t['configuration'] for t in tasks})
     config_name = configurations[0] if len(configurations) == 1 else 'all_configs'
     name = f'{stage.replace("-", "_")}_{methods}_{config_name}'
-    if stage != 'surface':
+    if stage in ('wake-nodes', 'wake-iterations'):
         meshes = sorted({t['mesh']['name'] for t in tasks})
         name += '_' + '_'.join(meshes)
         fixed_key = 'nodes' if stage == 'wake-iterations' else 'iterations'
@@ -269,7 +271,7 @@ def execute_tasks(tasks, output_root, prefix='study', resume_name=None, start_ca
         save_json(target / 'task.json', task)
         print(f'[{i}/{len(tasks)}] {task["run_id"]}', flush=True)
         run_task(target / 'task.json')
-        print('  Completed; inspect the saved model and solver outputs before selecting a mesh.', flush=True)
+        print('  Completed; saved the model and native solver outputs.', flush=True)
     print(f'Saved models: {input_run}', flush=True)
     print(f'Native solver files: {output_run}', flush=True)
     print('Plot generation is intentionally a separate later step.', flush=True)

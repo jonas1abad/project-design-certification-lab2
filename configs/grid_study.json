@@ -39,7 +39,7 @@
     3
   ],
   "stability": true,
-  "threads": 12,
+  "threads": 20,
   "wake": {
     "fixed": false,
     "nodes": 128,

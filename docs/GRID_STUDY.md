@@ -104,7 +104,7 @@ The history parser selects the final wake iteration of **Solver Case 1**, checks
 
 Only cases with completion records are included; missing cases are listed. Comparisons require common reference, flow, case and wake settings. The last available level is clearly labelled and can be an incomplete-study reference. The exploratory criterion is `abs(value - last_value) <= absolute_tolerance + relative_tolerance * abs(last_value)`; near-zero metrics use the absolute term, and percent changes are omitted below that floor. The default 1% plus 1e-4 is editable, not a lab-mandated acceptance rule. The largest scaled difference plot uses the same denominator, with 1 indicating the tolerance boundary.
 
-Inspect trends, derivatives and solver histories before accepting a mesh; the finest tested level is not an exact solution and an apparent match at three wake iterations must be rechecked after the wake study. No mesh is automatically selected. `.lod` distribution parsing and wake plots remain to be added. No aerodynamic-result extraction through the OpenVSP API or `.adb` parsing is performed.
+Inspect trends, derivatives and solver histories before selecting a mesh. Recheck an apparent match at three wake iterations against the wake study. Run `main_plot_wake_study.py` to compare the base-condition wake histories. Both plotters use native text outputs.
 
 ## Corrected study outputs
 

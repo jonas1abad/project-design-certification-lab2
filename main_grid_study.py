@@ -9,13 +9,14 @@ ROOT = Path(__file__).resolve().parent
 
 # Edit these values, then run this file directly from VS Code or a terminal.
 CONFIG_FILE = ROOT / 'configs' / 'grid_study.json'
-STAGE = 'surface'             # 'surface', 'wake-nodes', or 'wake-iterations'
-SELECTED_MESH = 'coarse'      # For wake stages: 'coarse', 'medium', 'fine', or 'finest'
-METHOD = None                # None runs both, or choose 'VLM' / 'PANEL'
-CONFIGURATION = None          # None runs all, or choose 'WB', 'WBH', 'WBV', 'WBHV'
+STAGE = 'wake-iterations'     # 'surface', 'wake-nodes', or 'wake-iterations'
+SELECTED_MESH = 'fine'        # For wake stages: 'coarse', 'medium', 'fine', or 'finest'
+METHOD = 'PANEL'              # None runs both, or choose 'VLM' / 'PANEL'
+CONFIGURATION = 'WBHV'        # None runs all, or choose 'WB', 'WBH', 'WBV', 'WBHV'
+THREADS = 4                   # None uses the thread count from CONFIG_FILE
 WAKE_NODES = None             # Base count when nodes are not being swept; e.g. 64
 WAKE_ITERATIONS = None        # Base count when iterations are not being swept
-OUTPUT_ROOT = None            # None uses output_root from CONFIG_FILE
+OUTPUT_ROOT = ROOT / 'output' / 'wk'  # PANEL wake filenames need a shorter Windows path
 RESUME_STUDY = None           # Existing study name; None starts a new study
 START_CASE = 1                # One-based case number when resuming; reruns this case
 
@@ -30,6 +31,10 @@ def main():
         raise ValueError('CONFIGURATION must be None, WB, WBH, WBV, or WBHV')
 
     cfg = load_config(CONFIG_FILE)
+    if THREADS is not None:
+        cfg['threads'] = THREADS
+    if STAGE != 'surface':
+        cfg['stability'] = False
     ref, flow = cfg['reference'], cfg['flow']
     print(f'References: Sref={ref["Sref"]:.6g} m2, bref={ref["bref"]:.6f} m, cref={ref["cref"]:.6g} m', flush=True)
     print(f'Moment reference: ({ref["Xcg"]:.6f}, {ref["Ycg"]:.6f}, {ref["Zcg"]:.6f}) m; {cfg["moment_reference"]}', flush=True)
@@ -57,6 +62,7 @@ def main():
         raise ValueError('No solver runs selected')
     output_root = Path(OUTPUT_ROOT).resolve() if OUTPUT_ROOT else Path(cfg['output_root'])
     print(f'Solver CPU threads per run: {cfg["threads"]}', flush=True)
+    print(f'Stability derivatives: {"enabled" if cfg["stability"] else "disabled"}', flush=True)
     folder = execute_tasks(tasks, output_root, prefix=STAGE.replace('-', '_'),
                            resume_name=RESUME_STUDY, start_case=START_CASE)
     print(f'Study folder: {folder}', flush=True)

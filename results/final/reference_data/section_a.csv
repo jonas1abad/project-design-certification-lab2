@@ -1,0 +1,60 @@
+﻿category,item,quantity,value,unit,source,notes
+design_mass,maximum_takeoff,mass,154863.76951,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/designMasses/mTOM/mass,
+design_mass,maximum_takeoff,cg_x,21.6027355371,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/designMasses/mTOM/location/x,Outside certification-case CG range; confirm loading definitions.
+design_mass,maximum_takeoff,Jxx,4407686.81675,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/designMasses/mTOM/massInertia/Jxx,Source inertia origin/axes not explicit; value is untransformed.
+design_mass,maximum_takeoff,Jyy,13018652.652,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/designMasses/mTOM/massInertia/Jyy,Source inertia origin/axes not explicit; value is untransformed.
+design_mass,maximum_takeoff,Jzz,17250031.9961,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/designMasses/mTOM/massInertia/Jzz,Source inertia origin/axes not explicit; value is untransformed.
+design_mass,zero_fuel,mass,111969.078657,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/designMasses/mZFM/mass,
+design_mass,zero_fuel,Jxx,3186830.84248,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/designMasses/mZFM/massInertia/Jxx,Source inertia origin/axes not explicit; value is untransformed.
+design_mass,zero_fuel,Jyy,9412702.29124,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/designMasses/mZFM/massInertia/Jyy,Source inertia origin/axes not explicit; value is untransformed.
+design_mass,zero_fuel,Jzz,12472059.9,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/designMasses/mZFM/massInertia/Jzz,Source inertia origin/axes not explicit; value is untransformed.
+design_mass,maximum_landing,mass,120548.014273,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/designMasses/mMLM/mass,
+mass_breakdown,payload_total,mass,22960.0,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/payload/massDescription/mass,Parent total. Do not add to its component entries.
+mass_breakdown,passengers,mass,21960.0,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/payload/mPax/massDescription/mass,
+mass_breakdown,cargo,mass,1000.0,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/payload/mCargo/massDescription/mass,
+mass_breakdown,fuel,mass,42894.6932193,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/fuel/massDescription/mass,
+mass_breakdown,operating_empty_total,mass,89009.0806832,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/massDescription/mass,Parent total. Do not add to its component entries. Component sum exceeds stated OEM by 896.664360 kg; review landing-gear aggregation.
+mass_breakdown,operating_empty_total,Jxx,2533350.15142,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/massDescription/massInertia/Jxx,Source inertia origin/axes not explicit; value is untransformed.
+mass_breakdown,operating_empty_total,Jyy,7482565.58111,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/massDescription/massInertia/Jyy,Source inertia origin/axes not explicit; value is untransformed.
+mass_breakdown,operating_empty_total,Jzz,9914581.72647,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/massDescription/massInertia/Jzz,Source inertia origin/axes not explicit; value is untransformed.
+mass_breakdown,wing,mass,10609.0958281,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mWingsStructure/mWingStructure[1]/massDescription/mass,
+mass_breakdown,wing,cg_x,23.562584158,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mWingsStructure/mWingStructure[1]/massDescription/location/x,
+mass_breakdown,htp,mass,1299.07301961,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mWingsStructure/mWingStructure[2]/massDescription/mass,
+mass_breakdown,htp,cg_x,47.1768751872,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mWingsStructure/mWingStructure[2]/massDescription/location/x,
+mass_breakdown,vtp,mass,701.779060782,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mWingsStructure/mWingStructure[3]/massDescription/mass,
+mass_breakdown,vtp,cg_x,44.6208078321,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mWingsStructure/mWingStructure[3]/massDescription/location/x,
+mass_breakdown,fuselage_structure,mass,19379.9635953,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mFuselagesStructure/mFuselageStructure/massDescription/mass,
+mass_breakdown,fuselage_structure,cg_x,21.581655,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mFuselagesStructure/mFuselageStructure/massDescription/location/x,
+mass_breakdown,mainGear,mass,5769.58573099,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mLandingGears/mLandingGear[1]/massDescription/mass,
+mass_breakdown,noseGear,mass,896.662376608,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mLandingGears/mLandingGear[2]/massDescription/mass,
+mass_breakdown,enginePylon,mass,2847.22608503,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mStructure/mPylons/massDescription/mass,
+mass_breakdown,engine,mass,24363.0566605,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mPowerUnits/massDescription/mass,
+mass_breakdown,engine,Jxx,56070.6778046,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mPowerUnits/massDescription/massInertia/Jxx,Source inertia origin/axes not explicit; value is untransformed.
+mass_breakdown,engine,Jyy,142260.534773,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mPowerUnits/massDescription/massInertia/Jyy,Source inertia origin/axes not explicit; value is untransformed.
+mass_breakdown,engine,Jzz,136536.976866,kg m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mPowerUnits/massDescription/massInertia/Jzz,Source inertia origin/axes not explicit; value is untransformed.
+mass_breakdown,mSystems,mass,8516.00796556,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mSystems/massDescription/mass,
+mass_breakdown,mSystems,cg_x,17.36455,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mSystems/massDescription/location/x,
+mass_breakdown,mFurnishing,mass,6511.45821898,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mEM/mFurnishing/massDescription/mass,
+mass_breakdown,mOperatorItems,mass,9011.8365019,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/massBreakdown/mOEM/mOperatorItems/massDescription/mass,
+reference,aircraft,area_m2,122.6,m^2,toolOutput.xml:/cpacs/vehicles/aircraft/model/reference/area,
+reference,aircraft,length_m,4.19,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/reference/length,
+reference,aircraft,point_x_m,20.7527214782,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/reference/point/x,"Reference point is quarter-MAC per lab guide, not aircraft CG."
+reference,aircraft,point_y_m,0.0,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/reference/point/y,"Reference point is quarter-MAC per lab guide, not aircraft CG."
+reference,aircraft,point_z_m,0.0,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/reference/point/z,"Reference point is quarter-MAC per lab guide, not aircraft CG."
+cg_limit,forward_limit,cg_x,20.2985462287,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/weightAndBalance/certificationCases/certificationCase[1]/coG/point/x,cc_forwardLocations; vector sample 76 (1-based). First occurrence if tied.
+cg_limit,forward_limit,associated_mass,92709.0806832,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/weightAndBalance/certificationCases/certificationCase[1]/mass,cc_forwardLocations; vector sample 76 (1-based). First occurrence if tied.
+cg_limit,forward_limit,cg_y,0.0,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/weightAndBalance/certificationCases/certificationCase[1]/coG/point/y,cc_forwardLocations; vector sample 76 (1-based). First occurrence if tied.
+cg_limit,forward_limit,cg_z,0.0,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/weightAndBalance/certificationCases/certificationCase[1]/coG/point/z,cc_forwardLocations; vector sample 76 (1-based). First occurrence if tied.
+cg_limit,forward_limit,cg_percent_mac,14.160495238663476,% MAC,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/weightAndBalance/certificationCases/certificationCase[1]/coG/point/x,cc_forwardLocations; vector sample 76 (1-based). First occurrence if tied. Derived: 25 + 100*(x_CG - reference_x)/reference_length.
+cg_limit,aft_limit,cg_x,21.0462444848,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/weightAndBalance/certificationCases/certificationCase[2]/coG/point/x,cc_rearwardLocations; vector sample 79 (1-based). First occurrence if tied.
+cg_limit,aft_limit,associated_mass,109315.437674,kg,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/weightAndBalance/certificationCases/certificationCase[2]/mass,cc_rearwardLocations; vector sample 79 (1-based). First occurrence if tied.
+cg_limit,aft_limit,cg_y,0.0,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/weightAndBalance/certificationCases/certificationCase[2]/coG/point/y,cc_rearwardLocations; vector sample 79 (1-based). First occurrence if tied.
+cg_limit,aft_limit,cg_z,0.0,m,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/weightAndBalance/certificationCases/certificationCase[2]/coG/point/z,cc_rearwardLocations; vector sample 79 (1-based). First occurrence if tied.
+cg_limit,aft_limit,cg_percent_mac,32.00532235322189,% MAC,toolOutput.xml:/cpacs/vehicles/aircraft/model/analyses/weightAndBalance/certificationCases/certificationCase[2]/coG/point/x,cc_rearwardLocations; vector sample 79 (1-based). First occurrence if tied. Derived: 25 + 100*(x_CG - reference_x)/reference_length.
+mass_breakdown,operating_empty_total,cg_x,20.5659293716,m,VAMPzero.m:aircraft.posCoGOEM (line 68),
+operating,cruise,altitude,11887.0,m,VAMPzero.m:aircraft.altCR (line 2),VAMPzero cruise output; no VSPAERO condition selected.
+operating,cruise,mach,0.78,1,VAMPzero.m:aircraft.machCR (line 46),VAMPzero cruise output; no VSPAERO condition selected.
+operating,cruise,dynamic_viscosity,1.42161307964e-05,kg/(m s),VAMPzero.m:atmosphere.myCR (line 114),VAMPzero cruise output; no VSPAERO condition selected.
+operating,cruise,density,0.31621123386,kg/m^3,VAMPzero.m:atmosphere.rhoCR (line 128),VAMPzero cruise output; no VSPAERO condition selected.
+operating,cruise,true_airspeed,230.153054375,m/s,VAMPzero.m:atmosphere.TASCR (line 138),VAMPzero cruise output; no VSPAERO condition selected.
+operating,cruise,temperature,216.65,K,VAMPzero.m:atmosphere.TCR (line 142),VAMPzero cruise output; no VSPAERO condition selected.

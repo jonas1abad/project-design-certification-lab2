@@ -7,6 +7,9 @@ Build a parametric OpenVSP aircraft from CPACS, extract the requested Section A 
 ```text
 main_geom_builder.py       Geometry + Section A workflow
 main_grid_study.py         Edit settings here, then run the study
+main_plot_grid_study.py    Plot surface refinement results
+main_plot_wake_study.py    Plot wake iteration and node sweeps
+main_obtain_final_results.py  Run the final stability cases
 main.py                    Compatibility entry point for geometry
 lab2/
   geometry/                CPACS parser and OpenVSP builders
@@ -18,7 +21,7 @@ inputs/toolOutput.xml      Example CPACS input
 geometry_data/             Generated geometry CSV/DAT and section_a.csv (ignored)
 output/                    Generated models and solver files (ignored)
 docs/                      Installation, geometry interface and study notes
-tools/experimental/        Archived plotting prototype; not part of the workflow
+results/final/             Published models and native stability results
 ```
 
 Keep the Python sources and configuration in Git. Generated models, solver outputs, local environments and diagnostic files are ignored.
@@ -97,11 +100,13 @@ See [grid-study settings and file layout](docs/GRID_STUDY.md) for editable spaci
 
 The saved **study models** receive the analysis references and flow conditions. The original geometry-only model can still show GUI defaults. For the supplied cruise case, the study uses `Sref = 122.6 m²`, `bref = 35.793435 m`, `cref = 4.19 m`, `Mach = 0.78` and `ReCref ≈ 2.145e7`. The moment reference is the CPACS quarter-MAC point, `(20.752721, 0, 0) m`.
 
-## Current status and limits
+## Final stability runs
 
-Geometry building, concise Section A extraction and native solver launching are implemented. A reduced PANEL diagnostic completed after excluding the visible TiGL STL reference mesh from the solver copy. Full mesh/wake convergence and aerodynamic validation remain work to assess from the study results.
+Run `main_obtain_final_results.py` in the OpenVSP environment. The defaults run VLM and PANEL for WB, WBH, WBV and WBHV on the fine mesh with 12 free-wake iterations, 128 wake nodes and steady stability enabled. New runs are written under `output/final`.
 
-Run `main_plot_grid_study.py` to compare completed surface runs. Edit its settings to select the study and VLM/PANEL. It reads native `.history` and `.stab` files, takes mesh counts from `solver.log`, and saves PNG/PDF figures plus a comparison CSV. The archived prototype under `tools/experimental` uses an obsolete output format. Wake plotting, load-distribution parsing and the final production-run launcher remain separate next steps.
+The [published final runs](results/final/README.md) contain the models, native outputs and settings for all eight completed cases. The PANEL values are provisional because the wake study showed substantial oscillations and the final WBHV near-field drag is negative.
+
+Run `main_plot_grid_study.py` for surface comparisons and `main_plot_wake_study.py` for wake histories. Both read the native files from the working study folders.
 
 The supplied source data retain two Section A discrepancies: component OEM masses exceed the stated OEM by about 896.664 kg, and the take-off CG lies aft of the supplied certification-case envelope. These are recorded in `section_a.csv`; no values are silently corrected.
 

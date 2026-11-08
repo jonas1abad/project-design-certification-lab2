@@ -1,0 +1,4 @@
+﻿component,section_index,span_m,estimated_edge_length_m,target_spacing_m,panel_intervals,SectTess_U,estimated_spacing_m
+wing,1,2.84,2.84,0.25,12,13,0.23666666666666666
+wing,2,3.425938140597034,3.88309289845,0.25,16,17,0.242693306153125
+wing,3,11.639957171886163,13.193184808800002,0.25,53,54,0.2489280152603774

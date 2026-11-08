@@ -7,11 +7,11 @@ ROOT = Path(__file__).resolve().parent
 STUDY_NAME = 'surface_VLM_PANEL_all_configs'
 STUDY_ROOT = ROOT / 'output/grid_fixed'
 PLAN_FILE = STUDY_ROOT / 'input' / STUDY_NAME / 'plan.json'
-METHOD = 'VLM'
+METHOD = 'PANEL'
 OUTPUT_FOLDER = STUDY_ROOT / 'plots' / STUDY_NAME / METHOD
 RELATIVE_TOLERANCE = 0.01  # 1%; exploratory comparison, not an acceptance requirement
 ABSOLUTE_TOLERANCE = 1e-4  # Avoid percentage-only decisions near zero
-SHOW_PLOTS = False
+SHOW_PLOTS = True
 
 
 def main():
