@@ -1,0 +1,10 @@
+VLM: 16 completed surface cases.
+0 planned cases are missing completion records.
+The last available mesh is a comparison reference, not an exact solution.
+Review all configurations and derivatives before choosing a common resolution.
+A pass to the last mesh alone does not prove monotonic or asymptotic convergence.
+Wake convergence must be studied separately.
+Derivatives retain the native .stab table conventions (Alpha/Beta per radian).
+Surface loops and solver equations are separate counts; no ADB parsing.
+Exploratory tolerance: 0.0001 + 0.01 * abs(last value).
+Pending runs:

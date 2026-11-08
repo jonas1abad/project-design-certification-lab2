@@ -1,0 +1,7 @@
+{
+  "nodes": 3288,
+  "triangles": 6572,
+  "edges": 9858,
+  "edge_face_count": 2,
+  "validation": "Closed edge connectivity; not aerodynamic convergence acceptance."
+}

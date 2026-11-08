@@ -5,9 +5,10 @@ from pathlib import Path
 from lab2.aero.postprocess import read_history_iterations
 
 ROOT = Path(__file__).resolve().parent
+PUBLISHED_ROOT = ROOT / 'results' / 'wake'
 STUDIES = [
-    (ROOT / 'output' / 'wake', 'wake_iterations_VLM_WBHV_fine_nodes128'),
-    (ROOT / 'output' / 'wk', 'wake_iterations_PANEL_WBHV_fine_nodes128'),
+    (ROOT / 'output' / 'wake', 'wake_iterations_VLM_WBHV_fine_nodes128', 'VLM'),
+    (ROOT / 'output' / 'wk', 'wake_iterations_PANEL_WBHV_fine_nodes128', 'PANEL'),
 ]
 SHOW_PLOTS = False
 
@@ -21,7 +22,7 @@ METRICS = {
 }
 
 
-def plot_study(study_root, study_name):
+def plot_study(study_root, study_name, output_folder=None):
     import matplotlib.pyplot as plt
     from matplotlib.ticker import MaxNLocator
 
@@ -41,7 +42,7 @@ def plot_study(study_root, study_name):
         if comparison is not None and settings != comparison:
             raise ValueError('Select a sweep with one configuration, mesh and flow condition')
         comparison = settings
-        folder = Path(task['output_directory'])
+        folder = ROOT / task['output_directory']
         result = json.loads((folder / 'result.json').read_text())
         if result['status'] != 'completed':
             raise ValueError(f'Incomplete wake run: {folder}')
@@ -70,7 +71,7 @@ def plot_study(study_root, study_name):
     fixed_key = 'nodes' if sweep_key == 'iterations' else 'iterations'
     fig.suptitle(f'{first["method"]} {first["configuration"]} | {first["mesh"]["name"]} mesh'
                  f' | {first["wake"][fixed_key]} wake {fixed_key} held fixed')
-    output = study_root / 'plots' / study_name
+    output = output_folder or study_root / 'plots' / study_name
     output.mkdir(parents=True, exist_ok=True)
     for extension in ('png', 'pdf'):
         fig.savefig(output / f'wake_convergence.{extension}', dpi=180)
@@ -83,7 +84,11 @@ def plot_study(study_root, study_name):
 def main():
     import matplotlib.pyplot as plt
 
-    figures = [plot_study(study_root, study_name) for study_root, study_name in STUDIES]
+    figures = []
+    for working_root, study_name, published_name in STUDIES:
+        plan = working_root / 'input' / study_name / 'plan.json'
+        study_root, name = (working_root, study_name) if plan.is_file() else (PUBLISHED_ROOT, published_name)
+        figures.append(plot_study(study_root, name, output_folder=working_root / 'plots' / study_name))
     if SHOW_PLOTS:
         plt.show()
     for figure in figures:

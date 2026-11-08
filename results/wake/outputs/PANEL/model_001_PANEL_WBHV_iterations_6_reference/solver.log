@@ -1,0 +1,521 @@
+C:\Users\G614JVR\Documents\OpenVSP-3.43.0-win64\python\openvsp\openvsp\vspaero.exe -omp 4 model_VSPGeom
+VSPAERO v.6.4.8 --- Compiled on: Apr 25 2025 at 00:25:22 PST 
+
+
+
+
+Initializing OPENMP for 4 threads 
+NumberOfThreads_: 4 
+Mach: 0.780000 
+AoA: 0.000000 
+ReCref_: 21449968.069131 
+Sref            = 122.600000 
+Cref            = 4.190000 
+Bref            = 35.793435 
+X_cg            = 20.752721 
+Y_cg            = 0.000000 
+Z_cg            = 0.000000 
+Mach            = 0.780000 
+AoA             = 0.000000 
+Beta            = 0.000000 
+Vinf            = 230.153054 
+Vref            = 230.153054 
+Rho             = 0.316211 
+ReCref          = 21449968.069131 
+ClMax           = -1.000000 
+Clo2D           = 0.000000 
+MaxTurningAngle = -1.000000 
+Symmetry        = NO  
+FarDist         = -1.000000 
+NumWakeNodes    = 128  
+WakeIters       = 6  
+NumberOfControlGroups = 0 
+NumNodes: 14362 
+MaxNumberOfGridLevels_: 24 
+NumTris: 28720 
+VSPGEOM defined NumKuttaNodes: 280 
+Found 6 VSPGEOM Surfaces 
+DumChar: # VSPGEOM Tag Key File
+ 
+DumChar: C:\Users\G614JVR\Documents\carlos iii\master\MSC - 2ND YEAR\DESIGN & CERTIFICATION\LAB_2\LAB2_PYTHON_TOOL\Lab2_Sequential_Workflow\output\wk\outputs\wake_iterations_PANEL_WBHV_fine_nodes128\model_001_PANEL_WBHV_iterations_6_reference\model_VSPGeom.vspgeom
+ 
+DumChar: 6
+ 
+NumberOfVSPSurfaces: 6 
+DumChar: 
+ 
+DumChar: # tag#,geom#,surf#,gname,gid,ssname1,ssname2,...,ssid1,ssid2,...
+ 
+n: 1 --> DumChar: 1,1,0,htp_S,VQLWMBFMLG
+ 
+Surface: 1 exists in triangulation and has OpenVSP Name: htp_S 
+CompID: 1 
+n: 2 --> DumChar: 2,1,1,htp_S,VQLWMBFMLG
+ 
+Surface: 2 exists in triangulation and has OpenVSP Name: htp_S 
+CompID: 1 
+n: 3 --> DumChar: 3,0,0,vtp_S,YRHNPIJSUC
+ 
+Surface: 3 exists in triangulation and has OpenVSP Name: vtp_S 
+CompID: 0 
+n: 4 --> DumChar: 4,3,0,wing_S,FANOBADZGE
+ 
+Surface: 4 exists in triangulation and has OpenVSP Name: wing_S 
+CompID: 3 
+n: 5 --> DumChar: 5,3,1,wing_S,FANOBADZGE
+ 
+Surface: 5 exists in triangulation and has OpenVSP Name: wing_S 
+CompID: 3 
+n: 6 --> DumChar: 6,2,0,fuselage_S,UIBWUWAQGV
+ 
+Surface: 6 exists in triangulation and has OpenVSP Name: fuselage_S 
+CompID: 2 
+NumberOfKuttaNodes after trimming: 273 
+NumberOfKuttaNodes: 273 
+NumberOfKuttaEdges: 273 
+Working on VortexSheet: 1 
+Found a starting wake sheet node... 
+VortexSheet: 1 finished... and 39 out of 273 kutta nodes are now allocated 
+Working on VortexSheet: 2 
+Found a starting wake sheet node... 
+VortexSheet: 2 finished... and 78 out of 273 kutta nodes are now allocated 
+Working on VortexSheet: 3 
+Found a starting wake sheet node... 
+VortexSheet: 3 finished... and 115 out of 273 kutta nodes are now allocated 
+Working on VortexSheet: 4 
+Found a starting wake sheet node... 
+VortexSheet: 4 finished... and 194 out of 273 kutta nodes are now allocated 
+Working on VortexSheet: 5 
+Found a starting wake sheet node... 
+VortexSheet: 5 finished... and 273 out of 273 kutta nodes are now allocated 
+Found 4 components for vspgeom geometry ... 
+NumberOfSurfaces_: 1 
+NumberOfSurfaces_: 1 
+NumberOfKuttaNodes: 273 
+Model is a VSPGEOM Panel geometry 
+NumberOfComponents_: 4
+Total NumberOfNodes:      14362 
+Total NumberOfLoops:      28720 
+Total NumberOfEdges:      43080 
+Total NumberOfKuttaNodes: 273 
+NumberOfSurfacePatches_:  6 
+Total surface area: 1105.736384 
+Minimum loop area constraint set to: 1105.736384 
+Agglomerating mesh... 
+Grid:0 --> # loops:      28720 ...# Edges:      43080 ...# Nodes:      14362  
+Cleaning up PANEL mesh... 
+Merged: 761 sliver triangles 
+Grid:1 --> # loops:      14566 ...# Edges:      28926 ...# Nodes:      14362  
+Merged 79 small loops out of 110 
+Grid:2 --> # loops:       3933 ...# Edges:      15113 ...# Nodes:      11182 
+Merged 19 small loops out of 39 
+Grid:3 --> # loops:       1011 ...# Edges:       8229 ...# Nodes:       7220 
+Merged 4 small loops out of 19 
+Grid:4 --> # loops:        268 ...# Edges:       4731 ...# Nodes:       4465 
+Merged 5 small loops out of 22 
+NumberOfGridLevels_: 4 
+NumberOfSurfacePatches_: 6 
+Xmax_ - Xmin_: 51.755353 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 11.675902 
+
+Wake FarDist set to: 51.755353 
+Minimum loop area: 8.805253e-06 
+Setting surface edge cutoff to: 2.967365e-07 
+Number Of Trailing Vortices: 273 
+VSPGeom().NumberOfComponents(): 4 
+NumberOfComponentGroups_: 1 
+Found 5 lifting surfaces for component group: 1 
+Found vortex sheet: 1 for component group: 1 
+Found vortex sheet: 2 for component group: 1 
+Found vortex sheet: 3 for component group: 1 
+Found vortex sheet: 4 for component group: 1 
+Found vortex sheet: 5 for component group: 1 
+AllComponentsAreFixed_: 1 
+Model type: PANEL 
+Setting up Kelvin constraints... and there are:          5 Vortex Sheets 
+There are 1 Kelvin constraints 
+NumberOfTotalWakeResidualNodes_: 106470 
+NumberOfEquations_: 14567 
+No high lift data file found... 
+Creating matrix preconditioners data structure... 
+Starting at level: 4 
+Level: 4 has MaxLoops of: 144 
+Starting at level: 4 
+Created: 28 Matrix preconditioners 
+Min matrix: 376 Loops 
+Max matrix: 564 Loops 
+Avg matrix: 520 Loops 
+
+Starting... Creating vorticity gradient data structure .. 
+Finished... Creating vorticity gradient data structure .. 
+NumberOfVortexLoops_: 14566 
+NumberOfEngineFaces_: 0 
+VSPGeom().NumberOfSurfaces(): 6 
+Done with setup... 
+WakeAngle_: 0.000000 0.000000 0.000000 
+Xmax_ - Xmin_: 51.755353 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 11.675902 
+
+Wake FarDist set to: 51.755353 
+
+SigmaAvg_: 0.217330 
+There are:          5 Vortex Sheets 
+Creating vortex sheet data... 
+There are:         39 kutta nodes for vortex sheet:          1  
+There are:         39 kutta nodes for vortex sheet:          2  
+There are:         37 kutta nodes for vortex sheet:          3  
+There are:         79 kutta nodes for vortex sheet:          4  
+There are:         79 kutta nodes for vortex sheet:          5  
+MaxNumberOfSurfaces: 6 
+NumberOfVortexSheetsForSurface[1]: 1 
+Surface 1 attached to vortex sheet: 1 
+NumberOfVortexSheetsForSurface[2]: 1 
+Surface 2 attached to vortex sheet: 2 
+NumberOfVortexSheetsForSurface[3]: 1 
+Surface 3 attached to vortex sheet: 3 
+NumberOfVortexSheetsForSurface[4]: 1 
+Surface 4 attached to vortex sheet: 4 
+NumberOfVortexSheetsForSurface[5]: 1 
+Surface 5 attached to vortex sheet: 5 
+NumberOfVortexSheetsForSurface[6]: 0 
+Could not find a matching trailing edge for 461 loops... these will be tossed into the 0'th group 
+Done creating vortex sheet data... 
+Creating interaction lists... 
+
+Forward sweep... 
+1000 / 14566 
+2000 / 14566 
+3000 / 14566 
+4000 / 14566 
+5000 / 14566 
+6000 / 14566 
+7000 / 14566 
+8000 / 14566 
+9000 / 14566 
+10000 / 14566 
+11000 / 14566 
+12000 / 14566 
+13000 / 14566 
+14000 / 14566 
+The Forward Speed Up Ratio: 3.246180 
+Backward sweep... 
+Working on level 2 of 4 
+Working on level 3 of 4 
+Working on level 4 of 4 
+
+Total Speed Up Ratio: 23.735375 
+
+
+WakeAngle_: 1.000000 -0.000000 0.000000 
+Xmax_ - Xmin_: 51.755353 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 11.675902 
+
+Wake FarDist set to: 51.755353 
+
+SigmaAvg_: 0.217330 
+There are:          5 Vortex Sheets 
+Creating vortex sheet data... 
+There are:         39 kutta nodes for vortex sheet:          1  
+There are:         39 kutta nodes for vortex sheet:          2  
+There are:         37 kutta nodes for vortex sheet:          3  
+There are:         79 kutta nodes for vortex sheet:          4  
+There are:         79 kutta nodes for vortex sheet:          5  
+Done creating vortex sheet data... 
+Solving... Mach: 0.780000 ... Alpha: 0.000000 ... Beta: 0.000000 
+
+  Iter      Mach       AoA      Beta      CLtot      CDo       CDi      CDtot     CDt      CDtot_t    CStot      L/D        E       CFxtot    CFytot    CFztot    CMxtot    CMytot    CMztot    T/QS 
+Wake Iter:     1 / 6     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    4.34763 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:     1 ... Red:   -0.02315 / -1.00000   ...  Max:    4.32448 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:     2 ... Red:   -0.22733 / -1.00000   ...  Max:    4.12030 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:     3 ... Red:   -0.25839 / -1.00000   ...  Max:    4.08924 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:     4 ... Red:   -0.47520 / -1.00000   ...  Max:    3.87242 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:     5 ... Red:   -0.55712 / -1.00000   ...  Max:    3.79051 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:     6 ... Red:   -0.64260 / -1.00000   ...  Max:    3.70503 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:     7 ... Red:   -0.69907 / -1.00000   ...  Max:    3.64856 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:     8 ... Red:   -0.72538 / -1.00000   ...  Max:    3.62225 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:     9 ... Red:   -0.75342 / -1.00000   ...  Max:    3.59421 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    10 ... Red:   -0.75734 / -1.00000   ...  Max:    3.59028 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    11 ... Red:   -0.75754 / -1.00000   ...  Max:    3.59009 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    12 ... Red:   -0.76363 / -1.00000   ...  Max:    3.58400 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    13 ... Red:   -0.79371 / -1.00000   ...  Max:    3.55391 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    14 ... Red:   -0.83102 / -1.00000   ...  Max:    3.51661 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    15 ... Red:   -0.86475 / -1.00000   ...  Max:    3.48288 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    16 ... Red:   -0.86909 / -1.00000   ...  Max:    3.47854 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    17 ... Red:   -0.86910 / -1.00000   ...  Max:    3.47852 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    18 ... Red:   -0.86991 / -1.00000   ...  Max:    3.47772 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    19 ... Red:   -0.86999 / -1.00000   ...  Max:    3.47763 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    20 ... Red:   -0.87159 / -1.00000   ...  Max:    3.47604 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    21 ... Red:   -0.87223 / -1.00000   ...  Max:    3.47540 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    22 ... Red:   -0.87226 / -1.00000   ...  Max:    3.47537 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    23 ... Red:   -0.87341 / -1.00000   ...  Max:    3.47422 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    24 ... Red:   -0.87584 / -1.00000   ...  Max:    3.47179 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    25 ... Red:   -0.87600 / -1.00000   ...  Max:    3.47163 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    26 ... Red:   -0.87612 / -1.00000   ...  Max:    3.47151 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    27 ... Red:   -0.87840 / -1.00000   ...  Max:    3.46923 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    28 ... Red:   -0.88521 / -1.00000   ...  Max:    3.46242 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    29 ... Red:   -0.89431 / -1.00000   ...  Max:    3.45331 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    30 ... Red:   -0.91482 / -1.00000   ...  Max:    3.43281 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    31 ... Red:   -0.94476 / -1.00000   ...  Max:    3.40287 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    32 ... Red:   -0.97984 / -1.00000   ...  Max:    3.36779 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    33 ... Red:   -0.99848 / -1.00000   ...  Max:    3.34915 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    34 ... Red:   -1.02474 / -1.00000   ...  Max:    3.32288 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    35 ... Red:   -1.04783 / -1.00000   ...  Max:    3.29980 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    36 ... Red:   -1.08685 / -1.00000   ...  Max:    3.26078 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    37 ... Red:   -1.12114 / -1.00000   ...  Max:    3.22649 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    38 ... Red:   -1.13154 / -1.00000   ...  Max:    3.21609 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    39 ... Red:   -1.16526 / -1.00000   ...  Max:    3.18237 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    40 ... Red:   -1.18659 / -1.00000   ...  Max:    3.16104 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    41 ... Red:   -1.24622 / -1.00000   ...  Max:    3.10141 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    42 ... Red:   -1.28386 / -1.00000   ...  Max:    3.06377 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    43 ... Red:   -1.32700 / -1.00000   ...  Max:    3.02063 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    44 ... Red:   -1.37630 / -1.00000   ...  Max:    2.97133 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    45 ... Red:   -1.39666 / -1.00000   ...  Max:    2.95097 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    46 ... Red:   -1.41768 / -1.00000   ...  Max:    2.92995 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    47 ... Red:   -1.44797 / -1.00000   ...  Max:    2.89966 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    48 ... Red:   -1.48192 / -1.00000   ...  Max:    2.86571 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    49 ... Red:   -1.51836 / -1.00000   ...  Max:    2.82927 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    50 ... Red:   -1.55235 / -1.00000   ...  Max:    2.79528 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    51 ... Red:   -1.60911 / -1.00000   ...  Max:    2.73852 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    52 ... Red:   -1.65910 / -1.00000   ...  Max:    2.68853 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    53 ... Red:   -1.72648 / -1.00000   ...  Max:    2.62115 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    54 ... Red:   -1.75479 / -1.00000   ...  Max:    2.59284 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    55 ... Red:   -1.79777 / -1.00000   ...  Max:    2.54985 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    56 ... Red:   -1.83679 / -1.00000   ...  Max:    2.51084 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    57 ... Red:   -1.84670 / -1.00000   ...  Max:    2.50093 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    58 ... Red:   -1.90559 / -1.00000   ...  Max:    2.44204 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    59 ... Red:   -1.94030 / -1.00000   ...  Max:    2.40732 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    60 ... Red:   -1.96286 / -1.00000   ...  Max:    2.38477 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    61 ... Red:   -2.01854 / -1.00000   ...  Max:    2.32909 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    62 ... Red:   -2.04061 / -1.00000   ...  Max:    2.30702 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    63 ... Red:   -2.05427 / -1.00000   ...  Max:    2.29336 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    64 ... Red:   -2.09116 / -1.00000   ...  Max:    2.25647 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    65 ... Red:   -2.12857 / -1.00000   ...  Max:    2.21906 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    66 ... Red:   -2.18075 / -1.00000   ...  Max:    2.16688 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    67 ... Red:   -2.23283 / -1.00000   ...  Max:    2.11479 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    68 ... Red:   -2.29981 / -1.00000   ...  Max:    2.04782 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    69 ... Red:   -2.36832 / -1.00000   ...  Max:    1.97931 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    70 ... Red:   -2.42866 / -1.00000   ...  Max:    1.91897 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    71 ... Red:   -2.47093 / -1.00000   ...  Max:    1.87670 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    72 ... Red:   -2.50760 / -1.00000   ...  Max:    1.84003 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    73 ... Red:   -2.54053 / -1.00000   ...  Max:    1.80710 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    74 ... Red:   -2.56098 / -1.00000   ...  Max:    1.78665 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    75 ... Red:   -2.58887 / -1.00000   ...  Max:    1.75876 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    76 ... Red:   -2.60196 / -1.00000   ...  Max:    1.74567 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    77 ... Red:   -2.63751 / -1.00000   ...  Max:    1.71011 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    78 ... Red:   -2.68663 / -1.00000   ...  Max:    1.66100 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    79 ... Red:   -2.75493 / -1.00000   ...  Max:    1.59270 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    80 ... Red:   -2.81585 / -1.00000   ...  Max:    1.53178 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    81 ... Red:   -2.86545 / -1.00000   ...  Max:    1.48218 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    82 ... Red:   -2.91105 / -1.00000   ...  Max:    1.43658 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    83 ... Red:   -2.95227 / -1.00000   ...  Max:    1.39536 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 6     ... GMRES Iter:    84 ... Red:   -3.00291 / -1.00000   ...  Max:    1.34472 / 1.36202    ... KTRes: 0.00000    
+        1   0.78000   0.00000   0.00000   0.31481   0.01148  -0.01055   0.00093   0.00514   0.01662   0.00168 337.48378  -0.28687   0.00093   0.00168   0.31481  -0.00674   0.12810   0.00290   0.00000
+Wake Iter:     2 / 6     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.74312 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:     1 ... Red:   -0.00058 / -1.00000   ...  Max:    2.74254 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:     2 ... Red:   -0.56600 / -1.00000   ...  Max:    2.17711 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:     3 ... Red:   -0.83400 / -1.00000   ...  Max:    1.90912 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:     4 ... Red:   -0.86788 / -1.00000   ...  Max:    1.87524 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:     5 ... Red:   -0.88814 / -1.00000   ...  Max:    1.85498 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:     6 ... Red:   -0.98742 / -1.00000   ...  Max:    1.75570 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:     7 ... Red:   -1.05880 / -1.00000   ...  Max:    1.68432 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:     8 ... Red:   -1.06515 / -1.00000   ...  Max:    1.67796 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:     9 ... Red:   -1.06551 / -1.00000   ...  Max:    1.67761 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    10 ... Red:   -1.06559 / -1.00000   ...  Max:    1.67753 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    11 ... Red:   -1.06890 / -1.00000   ...  Max:    1.67422 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    12 ... Red:   -1.09646 / -1.00000   ...  Max:    1.64665 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    13 ... Red:   -1.10216 / -1.00000   ...  Max:    1.64096 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    14 ... Red:   -1.10941 / -1.00000   ...  Max:    1.63371 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    15 ... Red:   -1.11603 / -1.00000   ...  Max:    1.62709 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    16 ... Red:   -1.12885 / -1.00000   ...  Max:    1.61426 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    17 ... Red:   -1.13376 / -1.00000   ...  Max:    1.60936 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    18 ... Red:   -1.14190 / -1.00000   ...  Max:    1.60122 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    19 ... Red:   -1.14946 / -1.00000   ...  Max:    1.59366 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    20 ... Red:   -1.18193 / -1.00000   ...  Max:    1.56119 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    21 ... Red:   -1.19543 / -1.00000   ...  Max:    1.54769 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    22 ... Red:   -1.20452 / -1.00000   ...  Max:    1.53859 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    23 ... Red:   -1.23170 / -1.00000   ...  Max:    1.51142 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    24 ... Red:   -1.24069 / -1.00000   ...  Max:    1.50243 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    25 ... Red:   -1.24266 / -1.00000   ...  Max:    1.50046 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    26 ... Red:   -1.24783 / -1.00000   ...  Max:    1.49529 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    27 ... Red:   -1.25244 / -1.00000   ...  Max:    1.49068 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    28 ... Red:   -1.25993 / -1.00000   ...  Max:    1.48319 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    29 ... Red:   -1.26000 / -1.00000   ...  Max:    1.48312 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    30 ... Red:   -1.26004 / -1.00000   ...  Max:    1.48308 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    31 ... Red:   -1.26006 / -1.00000   ...  Max:    1.48306 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    32 ... Red:   -1.26044 / -1.00000   ...  Max:    1.48267 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    33 ... Red:   -1.26266 / -1.00000   ...  Max:    1.48046 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    34 ... Red:   -1.26429 / -1.00000   ...  Max:    1.47882 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    35 ... Red:   -1.28294 / -1.00000   ...  Max:    1.46018 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    36 ... Red:   -1.30128 / -1.00000   ...  Max:    1.44184 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    37 ... Red:   -1.32031 / -1.00000   ...  Max:    1.42281 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    38 ... Red:   -1.37347 / -1.00000   ...  Max:    1.36965 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 6     ... GMRES Iter:    39 ... Red:   -1.44609 / -1.00000   ...  Max:    1.29703 / 1.36202    ... KTRes: 0.00000    
+        2   0.78000   0.00000   0.00000   0.32662   0.01152  -0.02411  -0.01259   0.00473   0.01625   0.00593   0.00000  -0.13508  -0.01259   0.00593   0.32662  -0.00492   0.15247   0.00280   0.00000
+Wake Iter:     3 / 6     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.71417 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:     1 ... Red:   -0.00083 / -1.00000   ...  Max:    2.71334 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:     2 ... Red:   -0.58397 / -1.00000   ...  Max:    2.13020 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:     3 ... Red:   -0.74568 / -1.00000   ...  Max:    1.96849 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:     4 ... Red:   -0.74705 / -1.00000   ...  Max:    1.96711 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:     5 ... Red:   -0.78001 / -1.00000   ...  Max:    1.93416 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:     6 ... Red:   -0.84686 / -1.00000   ...  Max:    1.86731 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:     7 ... Red:   -0.91665 / -1.00000   ...  Max:    1.79752 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:     8 ... Red:   -0.93402 / -1.00000   ...  Max:    1.78015 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:     9 ... Red:   -0.93502 / -1.00000   ...  Max:    1.77914 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    10 ... Red:   -0.93703 / -1.00000   ...  Max:    1.77713 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    11 ... Red:   -0.95123 / -1.00000   ...  Max:    1.76293 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    12 ... Red:   -1.01108 / -1.00000   ...  Max:    1.70309 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    13 ... Red:   -1.05452 / -1.00000   ...  Max:    1.65964 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    14 ... Red:   -1.08200 / -1.00000   ...  Max:    1.63217 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    15 ... Red:   -1.08372 / -1.00000   ...  Max:    1.63045 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    16 ... Red:   -1.11529 / -1.00000   ...  Max:    1.59888 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    17 ... Red:   -1.14963 / -1.00000   ...  Max:    1.56454 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    18 ... Red:   -1.18956 / -1.00000   ...  Max:    1.52461 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    19 ... Red:   -1.23742 / -1.00000   ...  Max:    1.47675 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    20 ... Red:   -1.26127 / -1.00000   ...  Max:    1.45290 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    21 ... Red:   -1.29548 / -1.00000   ...  Max:    1.41869 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    22 ... Red:   -1.31465 / -1.00000   ...  Max:    1.39952 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    23 ... Red:   -1.32514 / -1.00000   ...  Max:    1.38903 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    24 ... Red:   -1.32935 / -1.00000   ...  Max:    1.38482 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    25 ... Red:   -1.34090 / -1.00000   ...  Max:    1.37326 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 6     ... GMRES Iter:    26 ... Red:   -1.35711 / -1.00000   ...  Max:    1.35706 / 1.36202    ... KTRes: 0.00000    
+        3   0.78000   0.00000   0.00000   0.33801   0.01152  -0.02215  -0.01063   0.00621   0.01773   0.02444   0.00000  -0.15744  -0.01063   0.02444   0.33801  -0.00405   0.12653   0.00798   0.00000
+Wake Iter:     4 / 6     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.61011 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:     1 ... Red:   -0.00000 / -1.00000   ...  Max:    2.61011 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:     2 ... Red:   -0.43773 / -1.00000   ...  Max:    2.17238 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:     3 ... Red:   -0.57957 / -1.00000   ...  Max:    2.03054 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:     4 ... Red:   -0.67893 / -1.00000   ...  Max:    1.93118 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:     5 ... Red:   -0.68693 / -1.00000   ...  Max:    1.92318 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:     6 ... Red:   -0.77509 / -1.00000   ...  Max:    1.83502 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:     7 ... Red:   -0.87722 / -1.00000   ...  Max:    1.73289 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:     8 ... Red:   -0.99025 / -1.00000   ...  Max:    1.61986 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:     9 ... Red:   -1.01372 / -1.00000   ...  Max:    1.59639 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:    10 ... Red:   -1.03092 / -1.00000   ...  Max:    1.57920 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:    11 ... Red:   -1.03171 / -1.00000   ...  Max:    1.57840 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:    12 ... Red:   -1.07533 / -1.00000   ...  Max:    1.53478 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:    13 ... Red:   -1.12750 / -1.00000   ...  Max:    1.48262 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:    14 ... Red:   -1.22090 / -1.00000   ...  Max:    1.38922 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     4 / 6     ... GMRES Iter:    15 ... Red:   -1.25045 / -1.00000   ...  Max:    1.35967 / 1.36202    ... KTRes: 0.00000    
+        4   0.78000   0.00000   0.00000   0.34663   0.01152  -0.01239  -0.00087   0.00463   0.01615   0.00916   0.00000  -0.29595  -0.00087   0.00916   0.34663  -0.00518   0.10544   0.00288   0.00000
+Wake Iter:     5 / 6     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.81276 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:     1 ... Red:   -0.00000 / -1.00000   ...  Max:    2.81276 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:     2 ... Red:   -0.40249 / -1.00000   ...  Max:    2.41027 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:     3 ... Red:   -0.55602 / -1.00000   ...  Max:    2.25674 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:     4 ... Red:   -0.56736 / -1.00000   ...  Max:    2.24540 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:     5 ... Red:   -0.57204 / -1.00000   ...  Max:    2.24072 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:     6 ... Red:   -0.66375 / -1.00000   ...  Max:    2.14901 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:     7 ... Red:   -0.75884 / -1.00000   ...  Max:    2.05392 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:     8 ... Red:   -0.81104 / -1.00000   ...  Max:    2.00172 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:     9 ... Red:   -0.83981 / -1.00000   ...  Max:    1.97295 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    10 ... Red:   -0.84540 / -1.00000   ...  Max:    1.96736 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    11 ... Red:   -0.94570 / -1.00000   ...  Max:    1.86706 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    12 ... Red:   -0.97837 / -1.00000   ...  Max:    1.83439 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    13 ... Red:   -1.01808 / -1.00000   ...  Max:    1.79468 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    14 ... Red:   -1.05841 / -1.00000   ...  Max:    1.75435 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    15 ... Red:   -1.11616 / -1.00000   ...  Max:    1.69660 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    16 ... Red:   -1.14464 / -1.00000   ...  Max:    1.66812 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    17 ... Red:   -1.16103 / -1.00000   ...  Max:    1.65173 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    18 ... Red:   -1.17955 / -1.00000   ...  Max:    1.63321 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    19 ... Red:   -1.18850 / -1.00000   ...  Max:    1.62426 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    20 ... Red:   -1.19639 / -1.00000   ...  Max:    1.61637 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    21 ... Red:   -1.19950 / -1.00000   ...  Max:    1.61326 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    22 ... Red:   -1.20015 / -1.00000   ...  Max:    1.61261 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    23 ... Red:   -1.20278 / -1.00000   ...  Max:    1.60998 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    24 ... Red:   -1.20320 / -1.00000   ...  Max:    1.60956 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    25 ... Red:   -1.20323 / -1.00000   ...  Max:    1.60953 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    26 ... Red:   -1.20799 / -1.00000   ...  Max:    1.60477 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    27 ... Red:   -1.21715 / -1.00000   ...  Max:    1.59561 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    28 ... Red:   -1.22218 / -1.00000   ...  Max:    1.59058 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    29 ... Red:   -1.22353 / -1.00000   ...  Max:    1.58923 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    30 ... Red:   -1.23445 / -1.00000   ...  Max:    1.57831 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    31 ... Red:   -1.25374 / -1.00000   ...  Max:    1.55902 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    32 ... Red:   -1.26413 / -1.00000   ...  Max:    1.54863 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    33 ... Red:   -1.26593 / -1.00000   ...  Max:    1.54683 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    34 ... Red:   -1.27116 / -1.00000   ...  Max:    1.54160 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    35 ... Red:   -1.28239 / -1.00000   ...  Max:    1.53037 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    36 ... Red:   -1.29719 / -1.00000   ...  Max:    1.51556 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    37 ... Red:   -1.30377 / -1.00000   ...  Max:    1.50899 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    38 ... Red:   -1.31244 / -1.00000   ...  Max:    1.50031 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    39 ... Red:   -1.32350 / -1.00000   ...  Max:    1.48926 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    40 ... Red:   -1.33585 / -1.00000   ...  Max:    1.47691 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    41 ... Red:   -1.34526 / -1.00000   ...  Max:    1.46750 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    42 ... Red:   -1.34907 / -1.00000   ...  Max:    1.46369 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    43 ... Red:   -1.35395 / -1.00000   ...  Max:    1.45881 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    44 ... Red:   -1.35480 / -1.00000   ...  Max:    1.45796 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    45 ... Red:   -1.35542 / -1.00000   ...  Max:    1.45734 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    46 ... Red:   -1.35551 / -1.00000   ...  Max:    1.45725 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    47 ... Red:   -1.35554 / -1.00000   ...  Max:    1.45722 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    48 ... Red:   -1.35554 / -1.00000   ...  Max:    1.45722 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    49 ... Red:   -1.36070 / -1.00000   ...  Max:    1.45206 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    50 ... Red:   -1.37064 / -1.00000   ...  Max:    1.44212 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    51 ... Red:   -1.38184 / -1.00000   ...  Max:    1.43092 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    52 ... Red:   -1.38814 / -1.00000   ...  Max:    1.42462 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    53 ... Red:   -1.39598 / -1.00000   ...  Max:    1.41678 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    54 ... Red:   -1.41158 / -1.00000   ...  Max:    1.40118 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    55 ... Red:   -1.42253 / -1.00000   ...  Max:    1.39023 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    56 ... Red:   -1.43456 / -1.00000   ...  Max:    1.37820 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    57 ... Red:   -1.44961 / -1.00000   ...  Max:    1.36315 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     5 / 6     ... GMRES Iter:    58 ... Red:   -1.46256 / -1.00000   ...  Max:    1.35020 / 1.36202    ... KTRes: 0.00000    
+        5   0.78000   0.00000   0.00000   0.34853   0.01150  -0.01792  -0.00642  -0.00173   0.00978   0.01041   0.00000  -0.20688  -0.00642   0.01041   0.34853  -0.00272   0.12930   0.00467   0.00000
+Wake Iter:     6 / 6     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.88068 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:     1 ... Red:   -0.00043 / -1.00000   ...  Max:    2.88025 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:     2 ... Red:   -0.22655 / -1.00000   ...  Max:    2.65413 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:     3 ... Red:   -0.45039 / -1.00000   ...  Max:    2.43029 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:     4 ... Red:   -0.50280 / -1.00000   ...  Max:    2.37789 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:     5 ... Red:   -0.59975 / -1.00000   ...  Max:    2.28093 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:     6 ... Red:   -0.62230 / -1.00000   ...  Max:    2.25839 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:     7 ... Red:   -0.69031 / -1.00000   ...  Max:    2.19038 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:     8 ... Red:   -0.71494 / -1.00000   ...  Max:    2.16574 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:     9 ... Red:   -0.75698 / -1.00000   ...  Max:    2.12370 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    10 ... Red:   -0.81887 / -1.00000   ...  Max:    2.06182 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    11 ... Red:   -0.82262 / -1.00000   ...  Max:    2.05806 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    12 ... Red:   -0.84408 / -1.00000   ...  Max:    2.03660 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    13 ... Red:   -0.85015 / -1.00000   ...  Max:    2.03053 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    14 ... Red:   -0.86332 / -1.00000   ...  Max:    2.01737 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    15 ... Red:   -0.88860 / -1.00000   ...  Max:    1.99209 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    16 ... Red:   -0.88860 / -1.00000   ...  Max:    1.99208 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    17 ... Red:   -0.89072 / -1.00000   ...  Max:    1.98997 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    18 ... Red:   -0.89100 / -1.00000   ...  Max:    1.98968 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    19 ... Red:   -0.89116 / -1.00000   ...  Max:    1.98952 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    20 ... Red:   -0.89136 / -1.00000   ...  Max:    1.98933 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    21 ... Red:   -0.89608 / -1.00000   ...  Max:    1.98461 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    22 ... Red:   -0.90003 / -1.00000   ...  Max:    1.98065 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    23 ... Red:   -0.90809 / -1.00000   ...  Max:    1.97259 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    24 ... Red:   -0.90825 / -1.00000   ...  Max:    1.97244 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    25 ... Red:   -0.90825 / -1.00000   ...  Max:    1.97243 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    26 ... Red:   -0.91014 / -1.00000   ...  Max:    1.97054 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    27 ... Red:   -0.92800 / -1.00000   ...  Max:    1.95268 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    28 ... Red:   -0.95220 / -1.00000   ...  Max:    1.92849 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    29 ... Red:   -0.96577 / -1.00000   ...  Max:    1.91491 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    30 ... Red:   -0.97551 / -1.00000   ...  Max:    1.90517 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    31 ... Red:   -0.98422 / -1.00000   ...  Max:    1.89646 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    32 ... Red:   -0.99785 / -1.00000   ...  Max:    1.88283 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    33 ... Red:   -1.00613 / -1.00000   ...  Max:    1.87455 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    34 ... Red:   -1.01592 / -1.00000   ...  Max:    1.86477 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    35 ... Red:   -1.02440 / -1.00000   ...  Max:    1.85628 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    36 ... Red:   -1.05337 / -1.00000   ...  Max:    1.82731 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    37 ... Red:   -1.06848 / -1.00000   ...  Max:    1.81221 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    38 ... Red:   -1.07912 / -1.00000   ...  Max:    1.80157 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    39 ... Red:   -1.08637 / -1.00000   ...  Max:    1.79432 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    40 ... Red:   -1.09845 / -1.00000   ...  Max:    1.78223 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    41 ... Red:   -1.12097 / -1.00000   ...  Max:    1.75972 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    42 ... Red:   -1.13824 / -1.00000   ...  Max:    1.74245 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    43 ... Red:   -1.16871 / -1.00000   ...  Max:    1.71198 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    44 ... Red:   -1.20243 / -1.00000   ...  Max:    1.67825 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    45 ... Red:   -1.22998 / -1.00000   ...  Max:    1.65070 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    46 ... Red:   -1.25010 / -1.00000   ...  Max:    1.63058 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    47 ... Red:   -1.26590 / -1.00000   ...  Max:    1.61479 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    48 ... Red:   -1.28923 / -1.00000   ...  Max:    1.59145 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    49 ... Red:   -1.32346 / -1.00000   ...  Max:    1.55722 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    50 ... Red:   -1.34247 / -1.00000   ...  Max:    1.53821 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    51 ... Red:   -1.36627 / -1.00000   ...  Max:    1.51441 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    52 ... Red:   -1.39697 / -1.00000   ...  Max:    1.48371 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    53 ... Red:   -1.42525 / -1.00000   ...  Max:    1.45544 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    54 ... Red:   -1.47075 / -1.00000   ...  Max:    1.40993 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    55 ... Red:   -1.49750 / -1.00000   ...  Max:    1.38319 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     6 / 6     ... GMRES Iter:    56 ... Red:   -1.55691 / -1.00000   ...  Max:    1.32377 / 1.36202    ... KTRes: 0.00000    
+        6   0.78000   0.00000   0.00000   0.30108   0.01138  -0.04456  -0.03318   0.00649   0.01787   0.05492   0.00000  -0.06211  -0.03318   0.05492   0.30108  -0.02327   0.25232   0.01716   0.00000
+
+Total setup and solve time: 204.571000 seconds 

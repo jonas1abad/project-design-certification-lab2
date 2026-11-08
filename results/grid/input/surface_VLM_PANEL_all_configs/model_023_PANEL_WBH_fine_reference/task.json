@@ -1,0 +1,135 @@
+{
+  "run_id": "PANEL_WBH_fine_reference",
+  "stage": "surface",
+  "method": "PANEL",
+  "configuration": "WBH",
+  "case": {
+    "name": "reference",
+    "alpha_deg": 0.0,
+    "beta_deg": 0.0
+  },
+  "variant": "fine",
+  "sweep_value": 2,
+  "mesh": {
+    "name": "fine",
+    "chordwise": 33,
+    "fuselage_w": 33,
+    "fuselage_spacing_m": 0.4,
+    "lifting_spacing_m": 0.25
+  },
+  "wake": {
+    "fixed": false,
+    "nodes": 128,
+    "iterations": 3
+  },
+  "settings": {
+    "model": "results/final/Lab2_aircraft.vsp3",
+    "geometry_csv": "results/final/reference_data/openvsp_input.csv",
+    "section_a_csv": "results/final/reference_data/section_a.csv",
+    "output_root": "results/grid",
+    "api_version": "3.43.0",
+    "api_dir": null,
+    "vspaero_dir": null,
+    "methods": [
+      "VLM",
+      "PANEL"
+    ],
+    "configurations": [
+      "WB",
+      "WBH",
+      "WBV",
+      "WBHV"
+    ],
+    "flow": {
+      "mach": 0.78,
+      "speed_m_s": 230.153054375,
+      "density_kg_m3": 0.31621123386,
+      "viscosity_kg_ms": 1.42161307964e-05,
+      "temperature_K": 216.65,
+      "altitude_m": 11887.0,
+      "source": "results/final/reference_data/section_a.csv",
+      "reynolds": 21449968.069131244,
+      "speed_of_sound_m_s": 295.06801842964956,
+      "mach_from_speed": 0.7799999999995708
+    },
+    "moment_reference": "cpacs_reference",
+    "cases": [
+      {
+        "name": "reference",
+        "alpha_deg": 0.0,
+        "beta_deg": 0.0
+      }
+    ],
+    "robustness_alpha_deg": [
+      -5,
+      0,
+      5,
+      10
+    ],
+    "robustness_beta_deg": [
+      0,
+      3
+    ],
+    "stability": true,
+    "threads": 20,
+    "wake": {
+      "fixed": false,
+      "nodes": 128,
+      "iterations": 3
+    },
+    "wake_node_iterations": 12,
+    "wake_node_levels": [
+      32,
+      64,
+      128
+    ],
+    "wake_iteration_levels": [
+      6,
+      12,
+      18
+    ],
+    "cap_tessellation": 3,
+    "mesh_levels": [
+      {
+        "name": "coarse",
+        "chordwise": 17,
+        "fuselage_w": 17,
+        "fuselage_spacing_m": 0.65,
+        "lifting_spacing_m": 0.5
+      },
+      {
+        "name": "medium",
+        "chordwise": 25,
+        "fuselage_w": 25,
+        "fuselage_spacing_m": 0.65,
+        "lifting_spacing_m": 0.35
+      },
+      {
+        "name": "fine",
+        "chordwise": 33,
+        "fuselage_w": 33,
+        "fuselage_spacing_m": 0.4,
+        "lifting_spacing_m": 0.25
+      },
+      {
+        "name": "finest",
+        "chordwise": 49,
+        "lifting_spacing_m": 0.175,
+        "fuselage_w": 49,
+        "fuselage_spacing_m": 0.28
+      }
+    ],
+    "reference": {
+      "Sref": 122.6,
+      "cref": 4.19,
+      "bref": 35.7934351522514,
+      "Xcg": 20.7527214782,
+      "Ycg": 0.0,
+      "Zcg": 0.0
+    },
+    "model_sha256": "989b15ab79dc05e8ffafc470979ce1c601074f20cc47135367bd3a9d8eecad67",
+    "config_file": "configs/grid_study.json"
+  },
+  "input_directory": "results/grid/input/surface_VLM_PANEL_all_configs/model_023_PANEL_WBH_fine_reference",
+  "output_directory": "results/grid/outputs/surface_VLM_PANEL_all_configs/model_023_PANEL_WBH_fine_reference"
+}

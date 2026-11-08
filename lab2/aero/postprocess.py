@@ -8,6 +8,8 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
+from lab2.paths import PROJECT_ROOT
+
 
 def read_history_iterations(path):
     """Return the wake history of every explicitly numbered solver case."""
@@ -89,7 +91,7 @@ def collect_surface(plan_path, method):
     for task in tasks:
         if task['method'] != method or task['stage'] != 'surface':
             continue
-        output = Path(task['output_directory'])
+        output = PROJECT_ROOT / task['output_directory']
         if not (output / 'result.json').exists():
             pending.append(task['run_id'])
             continue

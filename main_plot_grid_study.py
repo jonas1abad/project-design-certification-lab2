@@ -5,10 +5,12 @@ from lab2.aero.postprocess import collect_surface, compare_levels, plot_surface,
 
 ROOT = Path(__file__).resolve().parent
 STUDY_NAME = 'surface_VLM_PANEL_all_configs'
-STUDY_ROOT = ROOT / 'output/grid_fixed'
+WORKING_ROOT = ROOT / 'output' / 'grid_fixed'
+PUBLISHED_ROOT = ROOT / 'results' / 'grid'
+STUDY_ROOT = WORKING_ROOT if (WORKING_ROOT / 'input' / STUDY_NAME / 'plan.json').is_file() else PUBLISHED_ROOT
 PLAN_FILE = STUDY_ROOT / 'input' / STUDY_NAME / 'plan.json'
 METHOD = 'PANEL'
-OUTPUT_FOLDER = STUDY_ROOT / 'plots' / STUDY_NAME / METHOD
+OUTPUT_FOLDER = WORKING_ROOT / 'plots' / STUDY_NAME / METHOD
 RELATIVE_TOLERANCE = 0.01  # 1%; exploratory comparison, not an acceptance requirement
 ABSOLUTE_TOLERANCE = 1e-4  # Avoid percentage-only decisions near zero
 SHOW_PLOTS = True

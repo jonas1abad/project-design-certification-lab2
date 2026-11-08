@@ -1,0 +1,2 @@
+# Preserve published native result files byte for byte across platforms.
+* -text

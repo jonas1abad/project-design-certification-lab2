@@ -1,0 +1,11 @@
+# VSPGEOM Tag Key File
+C:\Users\G614JVR\Documents\carlos iii\master\MSC - 2ND YEAR\DESIGN & CERTIFICATION\LAB_2\LAB2_PYTHON_TOOL\Lab2_Sequential_Workflow\output\grid_fixed\outputs\surface_VLM_PANEL_all_configs\model_032_PANEL_WBHV_finest_reference\model_VSPGeom.vspgeom
+6
+
+# tag#,geom#,surf#,gname,gid,ssname1,ssname2,...,ssid1,ssid2,...
+1,1,0,htp_S,VQLWMBFMLG
+2,1,1,htp_S,VQLWMBFMLG
+3,0,0,vtp_S,YRHNPIJSUC
+4,3,0,wing_S,FANOBADZGE
+5,3,1,wing_S,FANOBADZGE
+6,2,0,fuselage_S,UIBWUWAQGV

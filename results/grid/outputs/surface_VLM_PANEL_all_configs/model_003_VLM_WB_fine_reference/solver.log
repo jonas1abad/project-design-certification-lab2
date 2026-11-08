@@ -1,0 +1,449 @@
+C:\Users\G614JVR\Documents\OpenVSP-3.43.0-win64\python\openvsp\openvsp\vspaero.exe -omp 20 -stab model_DegenGeom
+VSPAERO v.6.4.8 --- Compiled on: Apr 25 2025 at 00:25:22 PST 
+
+
+
+
+Initializing OPENMP for 20 threads 
+NumberOfThreads_: 20 
+Mach: 0.780000 
+AoA: 0.000000 
+ReCref_: 21449968.069131 
+Sref            = 122.600000 
+Cref            = 4.190000 
+Bref            = 35.793435 
+X_cg            = 20.752721 
+Y_cg            = 0.000000 
+Z_cg            = 0.000000 
+Mach            = 0.780000 
+AoA             = 0.000000 
+Beta            = 0.000000 
+Vinf            = 230.153054 
+Vref            = 230.153054 
+Rho             = 0.316211 
+ReCref          = 21449968.069131 
+ClMax           = -1.000000 
+Clo2D           = 0.000000 
+MaxTurningAngle = -1.000000 
+Symmetry        = NO  
+FarDist         = -1.000000 
+NumWakeNodes    = 128  
+WakeIters       = 3  
+NumberOfControlGroups = 0 
+Number Of Surfaces: 3 
+GeomIDFlags are defined! 
+NumberOfDegenWings_: 2 
+NumberOfDegenBodies_: 1 
+Found: 0 Rotors 
+NumberOfDegenBodies_: 4 
+Working on reading wing: 1 --> Name: wing with GeomID: FANOBADZGE ... MainSurfNdx: 0 ... SymCopyNdx: 0 
+Working on reading wing: 2 --> Name: wing with GeomID: FANOBADZGE ... MainSurfNdx: 0 ... SymCopyNdx: 1 
+NumberOfComponents_: 2 
+Done loading in geometry! 
+NumberOfSurfaces_: 6 
+NumberOfSurfaces_: 6 
+NumberOfKuttaNodes: 164 
+NumberOfComponents_: 2
+Total NumberOfNodes:      8736 
+Total NumberOfLoops:      15744 
+Total NumberOfEdges:      24474 
+Total NumberOfKuttaNodes: 164 
+NumberOfSurfacePatches_:  6 
+Total surface area: 606.362640 
+Minimum loop area constraint set to: 606.362640 
+Agglomerating mesh... 
+Grid:0 --> # loops:      15744 ...# Edges:      24474 ...# Nodes:       8736  
+Grid:1 --> # loops:       7929 ...# Edges:      16659 ...# Nodes:       8736  
+Merged 16 small loops out of 16 
+Grid:2 --> # loops:       2004 ...# Edges:       8785 ...# Nodes:       6787 
+Merged 8 small loops out of 8 
+Grid:3 --> # loops:        505 ...# Edges:       4842 ...# Nodes:       4343 
+Merged 0 small loops out of 1 
+NumberOfGridLevels_: 3 
+NumberOfSurfacePatches_: 6 
+Xmax_ - Xmin_: 49.636295 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 5.680057 
+
+Wake FarDist set to: 49.636295 
+Minimum loop area: 6.643581e-05 
+Setting surface edge cutoff to: 8.150817e-07 
+Number Of Trailing Vortices: 164 
+VSPGeom().NumberOfComponents(): 2 
+NumberOfComponentGroups_: 1 
+Found 2 lifting surfaces for component group: 1 
+Model type is VLM_MODEL... and not VSPGEOM_SURFACE 
+Model type is VLM_MODEL... and not VSPGEOM_SURFACE 
+AllComponentsAreFixed_: 1 
+Model type: VLM 
+NumberOfTotalWakeResidualNodes_: 63960 
+NumberOfEquations_: 7929 
+No high lift data file found... 
+Creating matrix preconditioners data structure... 
+Starting at level: 3 
+Level: 3 has MaxLoops of: 26 
+Starting at level: 3 
+Created: 16 Matrix preconditioners 
+Min matrix: 342 Loops 
+Max matrix: 514 Loops 
+Avg matrix: 495 Loops 
+
+NumberOfVortexLoops_: 7929 
+NumberOfEngineFaces_: 0 
+VSPGeom().NumberOfSurfaces(): 0 
+Done with setup... 
+Calculating Stability Derivatives... 
+Calculating stability derivative case: 1 of 7 
+Creating interaction lists... 
+
+Forward sweep... 
+1000 / 7929 
+2000 / 7929 
+3000 / 7929 
+4000 / 7929 
+5000 / 7929 
+6000 / 7929 
+7000 / 7929 
+The Forward Speed Up Ratio: 2.641461 
+Backward sweep... 
+Working on level 2 of 3 
+Working on level 3 of 3 
+
+Total Speed Up Ratio: 19.766774 
+
+
+WakeAngle_: 1.000000 -0.000000 0.000000 
+Xmax_ - Xmin_: 49.636295 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 5.680057 
+
+Wake FarDist set to: 49.636295 
+
+SigmaAvg_: 0.226919 
+There are:          2 Vortex Sheets 
+Creating vortex sheet data... 
+There are:         82 kutta nodes for vortex sheet:          1  
+There are:         82 kutta nodes for vortex sheet:          2  
+Found a TE node that is common between vortex sheets: 1 and 2 
+Done creating vortex sheet data... 
+Solving... Mach: 0.780000 ... Alpha: 0.000000 ... Beta: 0.000000 
+
+  Iter      Mach       AoA      Beta      CLtot      CDo       CDi      CDtot     CDt      CDtot_t    CStot      L/D        E       CFxtot    CFytot    CFztot    CMxtot    CMytot    CMztot    T/QS 
+Wake Iter:     1 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    3.37221 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     1 ... Red:   -0.33429 / -1.00000   ...  Max:    3.03792 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     2 ... Red:   -0.52674 / -1.00000   ...  Max:    2.84547 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     3 ... Red:   -0.74034 / -1.00000   ...  Max:    2.63188 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     4 ... Red:   -0.95076 / -1.00000   ...  Max:    2.42146 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     5 ... Red:   -1.15535 / -1.00000   ...  Max:    2.21686 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     6 ... Red:   -1.40913 / -1.00000   ...  Max:    1.96308 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     7 ... Red:   -1.60540 / -1.00000   ...  Max:    1.76682 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     8 ... Red:   -1.84845 / -1.00000   ...  Max:    1.52376 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     9 ... Red:   -1.97540 / -1.00000   ...  Max:    1.39681 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:    10 ... Red:   -2.07870 / -1.00000   ...  Max:    1.29351 / 1.36202    ... KTRes: 0.00000    
+        1   0.78000   0.00000   0.00000   0.38290   0.00716   0.00572   0.01288   0.00681   0.01397  -0.00006  29.74428   0.78155   0.01288  -0.00006   0.38290   0.00042  -0.19293  -0.00146   0.00000
+Wake Iter:     2 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.04255 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     1 ... Red:   -0.53135 / -1.00000   ...  Max:    1.51120 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     2 ... Red:   -0.65242 / -1.00000   ...  Max:    1.39013 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     3 ... Red:   -0.81936 / -1.00000   ...  Max:    1.22319 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     4 ... Red:   -1.08885 / -1.00000   ...  Max:    0.95370 / 1.36202    ... KTRes: 0.00000    
+        2   0.78000   0.00000   0.00000   0.38123   0.00715   0.00570   0.01285   0.00636   0.01351  -0.00002  29.68150   0.77763   0.01285  -0.00002   0.38123   0.00017  -0.19375  -0.00034   0.00000
+Wake Iter:     3 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    1.08017 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     1 ... Red:   -0.18708 / -1.00000   ...  Max:    0.89309 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     2 ... Red:   -0.31260 / -1.00000   ...  Max:    0.76757 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     3 ... Red:   -0.39391 / -1.00000   ...  Max:    0.68626 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     4 ... Red:   -0.48301 / -1.00000   ...  Max:    0.59717 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     5 ... Red:   -0.52729 / -1.00000   ...  Max:    0.55288 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     6 ... Red:   -0.53052 / -1.00000   ...  Max:    0.54965 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     7 ... Red:   -0.57156 / -1.00000   ...  Max:    0.50861 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     8 ... Red:   -0.70416 / -1.00000   ...  Max:    0.37601 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     9 ... Red:   -0.83961 / -1.00000   ...  Max:    0.24056 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:    10 ... Red:   -1.08629 / -1.00000   ...  Max:   -0.00611 / 1.36202    ... KTRes: 0.00000    
+        3   0.78000   0.00000   0.00000   0.38209   0.00716   0.00571   0.01287   0.00586   0.01301  -0.00000  29.72253   0.78015   0.01287  -0.00000   0.38209   0.00001  -0.19410  -0.00002   0.00000
+
+Calculating stability derivative case: 2 of 7 
+WakeAngle_: 0.999848 -0.000000 0.017452 
+Xmax_ - Xmin_: 49.636295 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 5.680057 
+
+Wake FarDist set to: 49.636295 
+
+SigmaAvg_: 0.226919 
+There are:          2 Vortex Sheets 
+Creating vortex sheet data... 
+There are:         82 kutta nodes for vortex sheet:          1  
+There are:         82 kutta nodes for vortex sheet:          2  
+Found a TE node that is common between vortex sheets: 1 and 2 
+Done creating vortex sheet data... 
+Solving... Mach: 0.780000 ... Alpha: 1.000000 ... Beta: 0.000000 
+
+  Iter      Mach       AoA      Beta      CLtot      CDo       CDi      CDtot     CDt      CDtot_t    CStot      L/D        E       CFxtot    CFytot    CFztot    CMxtot    CMytot    CMztot    T/QS 
+Wake Iter:     1 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    3.44650 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     1 ... Red:   -0.31820 / -1.00000   ...  Max:    3.12830 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     2 ... Red:   -0.46222 / -1.00000   ...  Max:    2.98428 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     3 ... Red:   -0.71857 / -1.00000   ...  Max:    2.72793 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     4 ... Red:   -0.94910 / -1.00000   ...  Max:    2.49740 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     5 ... Red:   -1.16284 / -1.00000   ...  Max:    2.28366 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     6 ... Red:   -1.42381 / -1.00000   ...  Max:    2.02270 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     7 ... Red:   -1.63031 / -1.00000   ...  Max:    1.81619 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     8 ... Red:   -1.85762 / -1.00000   ...  Max:    1.58888 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     9 ... Red:   -2.00138 / -1.00000   ...  Max:    1.44512 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:    10 ... Red:   -2.09874 / -1.00000   ...  Max:    1.34776 / 1.36202    ... KTRes: 0.00000    
+        1   0.78000   1.00000   0.00000   0.49187   0.00775   0.00914   0.01689   0.01074   0.01849  -0.00006  29.14393   0.80771   0.00831  -0.00006   0.49209   0.00070  -0.17619  -0.00153   0.00000
+Wake Iter:     2 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.69183 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     1 ... Red:   -1.07241 / -1.00000   ...  Max:    1.61942 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     2 ... Red:   -1.20434 / -1.00000   ...  Max:    1.48749 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     3 ... Red:   -1.31784 / -1.00000   ...  Max:    1.37399 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     4 ... Red:   -1.45066 / -1.00000   ...  Max:    1.24117 / 1.36202    ... KTRes: 0.00000    
+        2   0.78000   1.00000   0.00000   0.48979   0.00774   0.00907   0.01681   0.00961   0.01735  -0.00003  29.16789   0.80725   0.00826  -0.00003   0.49001   0.00032  -0.16637  -0.00078   0.00000
+Wake Iter:     3 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    1.34891 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     1 ... Red:   -0.16304 / -1.00000   ...  Max:    1.18588 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     2 ... Red:   -0.25730 / -1.00000   ...  Max:    1.09162 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     3 ... Red:   -0.36509 / -1.00000   ...  Max:    0.98382 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     4 ... Red:   -0.50870 / -1.00000   ...  Max:    0.84021 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     5 ... Red:   -0.65982 / -1.00000   ...  Max:    0.68909 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     6 ... Red:   -0.68115 / -1.00000   ...  Max:    0.66777 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     7 ... Red:   -0.70834 / -1.00000   ...  Max:    0.64058 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     8 ... Red:   -0.88800 / -1.00000   ...  Max:    0.46092 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     9 ... Red:   -1.05808 / -1.00000   ...  Max:    0.29083 / 1.36202    ... KTRes: 0.00000    
+        3   0.78000   1.00000   0.00000   0.49085   0.00775   0.00911   0.01685   0.00897   0.01672  -0.00000  29.15221   0.80730   0.00828  -0.00000   0.49107   0.00002  -0.16667  -0.00004   0.00000
+
+Calculating stability derivative case: 3 of 7 
+WakeAngle_: 0.999848 -0.017452 0.000000 
+Xmax_ - Xmin_: 49.636295 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 5.680057 
+
+Wake FarDist set to: 49.636295 
+
+SigmaAvg_: 0.226919 
+There are:          2 Vortex Sheets 
+Creating vortex sheet data... 
+There are:         82 kutta nodes for vortex sheet:          1  
+There are:         82 kutta nodes for vortex sheet:          2  
+Found a TE node that is common between vortex sheets: 1 and 2 
+Done creating vortex sheet data... 
+Solving... Mach: 0.780000 ... Alpha: 0.000000 ... Beta: 1.000000 
+
+  Iter      Mach       AoA      Beta      CLtot      CDo       CDi      CDtot     CDt      CDtot_t    CStot      L/D        E       CFxtot    CFytot    CFztot    CMxtot    CMytot    CMztot    T/QS 
+Wake Iter:     1 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    3.37674 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     1 ... Red:   -0.33850 / -1.00000   ...  Max:    3.03823 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     2 ... Red:   -0.56332 / -1.00000   ...  Max:    2.81341 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     3 ... Red:   -0.76828 / -1.00000   ...  Max:    2.60846 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     4 ... Red:   -0.93312 / -1.00000   ...  Max:    2.44361 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     5 ... Red:   -1.13744 / -1.00000   ...  Max:    2.23930 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     6 ... Red:   -1.36776 / -1.00000   ...  Max:    2.00898 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     7 ... Red:   -1.52379 / -1.00000   ...  Max:    1.85295 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     8 ... Red:   -1.69251 / -1.00000   ...  Max:    1.68422 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     9 ... Red:   -1.79478 / -1.00000   ...  Max:    1.58196 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:    10 ... Red:   -1.91905 / -1.00000   ...  Max:    1.45769 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:    11 ... Red:   -2.06157 / -1.00000   ...  Max:    1.31516 / 1.36202    ... KTRes: 0.00000    
+        1   0.78000   0.00000   1.00000   0.38409   0.00717   0.00569   0.01285   0.00699   0.01416  -0.00001  29.90193   0.79111   0.01285  -0.00023   0.38409  -0.00091  -0.20315   0.00944   0.00000
+Wake Iter:     2 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.17866 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     1 ... Red:   -0.58237 / -1.00000   ...  Max:    1.59630 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     2 ... Red:   -0.81406 / -1.00000   ...  Max:    1.36460 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     3 ... Red:   -1.08234 / -1.00000   ...  Max:    1.09633 / 1.36202    ... KTRes: 0.00000    
+        2   0.78000   0.00000   1.00000   0.38285   0.00716   0.00566   0.01282   0.00633   0.01349   0.00000  29.88249   0.78980   0.01282  -0.00022   0.38285  -0.00076  -0.19862   0.01010   0.00000
+Wake Iter:     3 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.04007 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     1 ... Red:   -0.58266 / -1.00000   ...  Max:    1.45741 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     2 ... Red:   -0.80391 / -1.00000   ...  Max:    1.23615 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     3 ... Red:   -1.02297 / -1.00000   ...  Max:    1.01710 / 1.36202    ... KTRes: 0.00000    
+        3   0.78000   0.00000   1.00000   0.38310   0.00716   0.00568   0.01284   0.00551   0.01267  -0.00001  29.86697   0.78894   0.01283  -0.00023   0.38310  -0.00063  -0.19601   0.01027   0.00000
+
+Calculating stability derivative case: 4 of 7 
+WakeAngle_: 1.000000 -0.000000 0.000000 
+Xmax_ - Xmin_: 49.636295 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 5.680057 
+
+Wake FarDist set to: 49.636295 
+
+SigmaAvg_: 0.226919 
+There are:          2 Vortex Sheets 
+Creating vortex sheet data... 
+There are:         82 kutta nodes for vortex sheet:          1  
+There are:         82 kutta nodes for vortex sheet:          2  
+Found a TE node that is common between vortex sheets: 1 and 2 
+Done creating vortex sheet data... 
+Solving... Mach: 0.780000 ... Alpha: 0.000000 ... Beta: 0.000000 
+
+  Iter      Mach       AoA      Beta      CLtot      CDo       CDi      CDtot     CDt      CDtot_t    CStot      L/D        E       CFxtot    CFytot    CFztot    CMxtot    CMytot    CMztot    T/QS 
+Wake Iter:     1 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    3.44489 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     1 ... Red:   -0.36373 / -1.00000   ...  Max:    3.08117 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     2 ... Red:   -0.55969 / -1.00000   ...  Max:    2.88520 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     3 ... Red:   -0.77928 / -1.00000   ...  Max:    2.66561 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     4 ... Red:   -0.99968 / -1.00000   ...  Max:    2.44522 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     5 ... Red:   -1.12721 / -1.00000   ...  Max:    2.31769 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     6 ... Red:   -1.35330 / -1.00000   ...  Max:    2.09159 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     7 ... Red:   -1.62366 / -1.00000   ...  Max:    1.82124 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     8 ... Red:   -1.88796 / -1.00000   ...  Max:    1.55694 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     9 ... Red:   -2.12933 / -1.00000   ...  Max:    1.31556 / 1.36202    ... KTRes: 0.00000    
+        1   0.78000   0.00000   0.00000   0.38185   0.00741   0.00047   0.00788   0.00906   0.01647   0.00354  48.50929   9.49641   0.00788   0.00354   0.38185   0.04547  -0.14461  -0.00667   0.00000
+Wake Iter:     2 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.72499 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     1 ... Red:   -0.69669 / -1.00000   ...  Max:    2.02830 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     2 ... Red:   -0.92833 / -1.00000   ...  Max:    1.79665 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     3 ... Red:   -1.11934 / -1.00000   ...  Max:    1.60564 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     4 ... Red:   -1.37483 / -1.00000   ...  Max:    1.35016 / 1.36202    ... KTRes: 0.00000    
+        2   0.78000   0.00000   0.00000   0.38164   0.00740   0.00056   0.00796   0.00827   0.01567   0.00361  47.97315   7.96186   0.00796   0.00361   0.38164   0.04510  -0.19536  -0.00404   0.00000
+Wake Iter:     3 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    1.71977 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     1 ... Red:   -0.35015 / -1.00000   ...  Max:    1.36962 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     2 ... Red:   -0.54893 / -1.00000   ...  Max:    1.17084 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     3 ... Red:   -0.68035 / -1.00000   ...  Max:    1.03942 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     4 ... Red:   -0.85851 / -1.00000   ...  Max:    0.86126 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     5 ... Red:   -1.07647 / -1.00000   ...  Max:    0.64330 / 1.36202    ... KTRes: 0.00000    
+        3   0.78000   0.00000   0.00000   0.38274   0.00741   0.00061   0.00801   0.00714   0.01454   0.00364  47.81265   7.38510   0.00801   0.00364   0.38274   0.04475  -0.19471  -0.00369   0.00000
+
+Calculating stability derivative case: 5 of 7 
+WakeAngle_: 1.000000 -0.000000 0.000000 
+Xmax_ - Xmin_: 49.636295 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 5.680057 
+
+Wake FarDist set to: 49.636295 
+
+SigmaAvg_: 0.226919 
+There are:          2 Vortex Sheets 
+Creating vortex sheet data... 
+There are:         82 kutta nodes for vortex sheet:          1  
+There are:         82 kutta nodes for vortex sheet:          2  
+Found a TE node that is common between vortex sheets: 1 and 2 
+Done creating vortex sheet data... 
+Solving... Mach: 0.780000 ... Alpha: 0.000000 ... Beta: 0.000000 
+
+  Iter      Mach       AoA      Beta      CLtot      CDo       CDi      CDtot     CDt      CDtot_t    CStot      L/D        E       CFxtot    CFytot    CFztot    CMxtot    CMytot    CMztot    T/QS 
+Wake Iter:     1 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    3.43598 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     1 ... Red:   -0.34928 / -1.00000   ...  Max:    3.08670 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     2 ... Red:   -0.55288 / -1.00000   ...  Max:    2.88310 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     3 ... Red:   -0.75627 / -1.00000   ...  Max:    2.67971 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     4 ... Red:   -0.93282 / -1.00000   ...  Max:    2.50316 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     5 ... Red:   -1.13287 / -1.00000   ...  Max:    2.30311 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     6 ... Red:   -1.43153 / -1.00000   ...  Max:    2.00445 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     7 ... Red:   -1.63838 / -1.00000   ...  Max:    1.79760 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     8 ... Red:   -1.86217 / -1.00000   ...  Max:    1.57381 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     9 ... Red:   -1.98979 / -1.00000   ...  Max:    1.44619 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:    10 ... Red:   -2.09970 / -1.00000   ...  Max:    1.33628 / 1.36202    ... KTRes: 0.00000    
+        1   0.78000   0.00000   0.00000   0.46636   0.00768   0.00574   0.01343   0.00854   0.01622  -0.00006  34.75342   1.15485   0.01343  -0.00006   0.46636   0.00054  -0.21428  -0.00144   0.00000
+Wake Iter:     2 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.08743 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     1 ... Red:   -0.53439 / -1.00000   ...  Max:    1.55303 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     2 ... Red:   -0.65911 / -1.00000   ...  Max:    1.42831 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     3 ... Red:   -0.81673 / -1.00000   ...  Max:    1.27069 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     4 ... Red:   -1.06474 / -1.00000   ...  Max:    1.02269 / 1.36202    ... KTRes: 0.00000    
+        2   0.78000   0.00000   0.00000   0.46466   0.00767   0.00574   0.01342   0.00797   0.01565  -0.00002  34.65720   1.14684   0.01342  -0.00002   0.46466   0.00021  -0.21622  -0.00035   0.00000
+Wake Iter:     3 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    1.22842 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     1 ... Red:   -0.19193 / -1.00000   ...  Max:    1.03649 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     2 ... Red:   -0.34106 / -1.00000   ...  Max:    0.88736 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     3 ... Red:   -0.43963 / -1.00000   ...  Max:    0.78879 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     4 ... Red:   -0.54193 / -1.00000   ...  Max:    0.68649 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     5 ... Red:   -0.60958 / -1.00000   ...  Max:    0.61884 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     6 ... Red:   -0.62084 / -1.00000   ...  Max:    0.60758 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     7 ... Red:   -0.63808 / -1.00000   ...  Max:    0.59034 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     8 ... Red:   -0.74630 / -1.00000   ...  Max:    0.48212 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     9 ... Red:   -0.86998 / -1.00000   ...  Max:    0.35844 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:    10 ... Red:   -1.09559 / -1.00000   ...  Max:    0.13284 / 1.36202    ... KTRes: 0.00000    
+        3   0.78000   0.00000   0.00000   0.46564   0.00768   0.00575   0.01343   0.00741   0.01509  -0.00000  34.70465   1.15093   0.01343  -0.00000   0.46564   0.00001  -0.21705  -0.00004   0.00000
+
+Calculating stability derivative case: 6 of 7 
+WakeAngle_: 1.000000 -0.000000 0.000000 
+Xmax_ - Xmin_: 49.636295 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 5.680057 
+
+Wake FarDist set to: 49.636295 
+
+SigmaAvg_: 0.226919 
+There are:          2 Vortex Sheets 
+Creating vortex sheet data... 
+There are:         82 kutta nodes for vortex sheet:          1  
+There are:         82 kutta nodes for vortex sheet:          2  
+Found a TE node that is common between vortex sheets: 1 and 2 
+Done creating vortex sheet data... 
+Solving... Mach: 0.780000 ... Alpha: 0.000000 ... Beta: 0.000000 
+
+  Iter      Mach       AoA      Beta      CLtot      CDo       CDi      CDtot     CDt      CDtot_t    CStot      L/D        E       CFxtot    CFytot    CFztot    CMxtot    CMytot    CMztot    T/QS 
+Wake Iter:     1 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    3.39198 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     1 ... Red:   -0.30551 / -1.00000   ...  Max:    3.08647 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     2 ... Red:   -0.54857 / -1.00000   ...  Max:    2.84341 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     3 ... Red:   -0.75128 / -1.00000   ...  Max:    2.64070 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     4 ... Red:   -0.95163 / -1.00000   ...  Max:    2.44035 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     5 ... Red:   -1.12470 / -1.00000   ...  Max:    2.26728 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     6 ... Red:   -1.36759 / -1.00000   ...  Max:    2.02439 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     7 ... Red:   -1.59255 / -1.00000   ...  Max:    1.79943 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     8 ... Red:   -1.87645 / -1.00000   ...  Max:    1.51553 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     9 ... Red:   -2.07371 / -1.00000   ...  Max:    1.31827 / 1.36202    ... KTRes: 0.00000    
+        1   0.78000   0.00000   0.00000   0.38456   0.00717   0.00565   0.01283   0.00696   0.01414  -0.00002  30.00082   0.79794   0.01283  -0.00002   0.38456  -0.00754  -0.18351  -0.00625   0.00000
+Wake Iter:     2 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.51817 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     1 ... Red:   -0.65960 / -1.00000   ...  Max:    1.85857 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     2 ... Red:   -0.85861 / -1.00000   ...  Max:    1.65955 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     3 ... Red:   -1.02923 / -1.00000   ...  Max:    1.48893 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     4 ... Red:   -1.18471 / -1.00000   ...  Max:    1.33346 / 1.36202    ... KTRes: 0.00000    
+        2   0.78000   0.00000   0.00000   0.38396   0.00717   0.00566   0.01284   0.00635   0.01352   0.00003  29.93785   0.79408   0.01284   0.00003   0.38396  -0.00755  -0.20333  -0.00430   0.00000
+Wake Iter:     3 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    1.49922 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     1 ... Red:   -0.17330 / -1.00000   ...  Max:    1.32592 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     2 ... Red:   -0.18641 / -1.00000   ...  Max:    1.31281 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     3 ... Red:   -0.21570 / -1.00000   ...  Max:    1.28353 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     4 ... Red:   -0.30843 / -1.00000   ...  Max:    1.19079 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     5 ... Red:   -0.41036 / -1.00000   ...  Max:    1.08886 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     6 ... Red:   -0.54869 / -1.00000   ...  Max:    0.95054 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     7 ... Red:   -0.71302 / -1.00000   ...  Max:    0.78620 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     8 ... Red:   -0.92405 / -1.00000   ...  Max:    0.57518 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     9 ... Red:   -1.07551 / -1.00000   ...  Max:    0.42371 / 1.36202    ... KTRes: 0.00000    
+        3   0.78000   0.00000   0.00000   0.38534   0.00718   0.00569   0.01287   0.00571   0.01289   0.00005  29.96957   0.79619   0.01287   0.00005   0.38534  -0.00771  -0.19810  -0.00400   0.00000
+
+Calculating stability derivative case: 7 of 7 
+WakeAngle_: 1.000000 -0.000000 0.000000 
+Xmax_ - Xmin_: 49.636295 
+Ymax_ - Ymin_: 35.793435 
+Zmax_ - Zmin_: 5.680057 
+
+Wake FarDist set to: 49.636295 
+
+SigmaAvg_: 0.226919 
+There are:          2 Vortex Sheets 
+Creating vortex sheet data... 
+There are:         82 kutta nodes for vortex sheet:          1  
+There are:         82 kutta nodes for vortex sheet:          2  
+Found a TE node that is common between vortex sheets: 1 and 2 
+Done creating vortex sheet data... 
+Solving... Mach: 0.880000 ... Alpha: 0.000000 ... Beta: 0.000000 
+
+  Iter      Mach       AoA      Beta      CLtot      CDo       CDi      CDtot     CDt      CDtot_t    CStot      L/D        E       CFxtot    CFytot    CFztot    CMxtot    CMytot    CMztot    T/QS 
+Wake Iter:     1 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    3.41341 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     1 ... Red:   -0.33733 / -1.00000   ...  Max:    3.07607 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     2 ... Red:   -0.52796 / -1.00000   ...  Max:    2.88545 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     3 ... Red:   -0.73881 / -1.00000   ...  Max:    2.67460 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     4 ... Red:   -0.96122 / -1.00000   ...  Max:    2.45218 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     5 ... Red:   -1.15246 / -1.00000   ...  Max:    2.26095 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     6 ... Red:   -1.41244 / -1.00000   ...  Max:    2.00097 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     7 ... Red:   -1.62188 / -1.00000   ...  Max:    1.79153 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     8 ... Red:   -1.89341 / -1.00000   ...  Max:    1.52000 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:     9 ... Red:   -2.04149 / -1.00000   ...  Max:    1.37192 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     1 / 3     ... GMRES Iter:    10 ... Red:   -2.14645 / -1.00000   ...  Max:    1.26695 / 1.36202    ... KTRes: 0.00000    
+        1   0.88000   0.00000   0.00000   0.44845   0.00754   0.00741   0.01495   0.00892   0.01646  -0.00006  30.02567   0.82795   0.01495  -0.00006   0.44845   0.00048  -0.22120  -0.00155   0.00000
+Wake Iter:     2 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    2.10378 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     1 ... Red:   -0.56004 / -1.00000   ...  Max:    1.54374 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     2 ... Red:   -0.69400 / -1.00000   ...  Max:    1.40978 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     3 ... Red:   -0.84985 / -1.00000   ...  Max:    1.25393 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     2 / 3     ... GMRES Iter:     4 ... Red:   -1.10289 / -1.00000   ...  Max:    1.00089 / 1.36202    ... KTRes: 0.00000    
+        2   0.88000   0.00000   0.00000   0.44634   0.00753   0.00738   0.01490   0.00823   0.01575  -0.00003  29.96750   0.82348   0.01490  -0.00003   0.44634   0.00022  -0.22243  -0.00041   0.00000
+Wake Iter:     3 / 3     ... GMRES Iter:     0 ... Red:    0.00000 / -1.00000   ...  Max:    1.19234 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     1 ... Red:   -0.20009 / -1.00000   ...  Max:    0.99224 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     2 ... Red:   -0.33765 / -1.00000   ...  Max:    0.85469 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     3 ... Red:   -0.41651 / -1.00000   ...  Max:    0.77583 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     4 ... Red:   -0.46845 / -1.00000   ...  Max:    0.72389 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     5 ... Red:   -0.47941 / -1.00000   ...  Max:    0.71292 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     6 ... Red:   -0.48567 / -1.00000   ...  Max:    0.70667 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     7 ... Red:   -0.56478 / -1.00000   ...  Max:    0.62756 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     8 ... Red:   -0.72473 / -1.00000   ...  Max:    0.46761 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:     9 ... Red:   -0.86055 / -1.00000   ...  Max:    0.33179 / 1.36202    ... KTRes: 0.00000    
+Wake Iter:     3 / 3     ... GMRES Iter:    10 ... Red:   -1.06245 / -1.00000   ...  Max:    0.12988 / 1.36202    ... KTRes: 0.00000    
+        3   0.88000   0.00000   0.00000   0.44762   0.00753   0.00740   0.01493   0.00762   0.01516  -0.00000  30.00576   0.82636   0.01493  -0.00000   0.44762   0.00002  -0.22315  -0.00004   0.00000
+
+Calculating Control Derivatives... 
+
+
+
+
+
+
+
+Total setup and solve time: 131.224000 seconds 

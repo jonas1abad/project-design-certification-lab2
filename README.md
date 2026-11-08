@@ -21,10 +21,10 @@ inputs/toolOutput.xml      Example CPACS input
 geometry_data/             Generated geometry CSV/DAT and section_a.csv (ignored)
 output/                    Generated models and solver files (ignored)
 docs/                      Installation, geometry interface and study notes
-results/final/             Published models and native stability results
+results/                   Published surface, wake and final runs, plus figures
 ```
 
-Keep the Python sources and configuration in Git. Generated models, solver outputs, local environments and diagnostic files are ignored.
+Working runs, local environments and diagnostic files are ignored. Published snapshots are indexed in [results](results/README.md).
 
 ## Setup
 
@@ -106,7 +106,7 @@ Run `main_obtain_final_results.py` in the OpenVSP environment. The defaults run 
 
 The [published final runs](results/final/README.md) contain the models, native outputs and settings for all eight completed cases. The PANEL values are provisional because the wake study showed substantial oscillations and the final WBHV near-field drag is negative.
 
-Run `main_plot_grid_study.py` for surface comparisons and `main_plot_wake_study.py` for wake histories. Both read the native files from the working study folders.
+Run `main_plot_grid_study.py` for surface comparisons and `main_plot_wake_study.py` for wake histories. They use the working study when available and fall back to the published results on a fresh clone. New figures are saved under `output/`.
 
 The supplied source data retain two Section A discrepancies: component OEM masses exceed the stated OEM by about 896.664 kg, and the take-off CG lies aft of the supplied certification-case envelope. These are recorded in `section_a.csv`; no values are silently corrected.
 
