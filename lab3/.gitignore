@@ -1,0 +1,4 @@
+.venv/
+.cpacs-converter/
+__pycache__/
+output/
