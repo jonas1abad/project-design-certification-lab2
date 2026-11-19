@@ -5,4 +5,4 @@ __pycache__/
 output/
 geometry_data/
 outputs/
-!/results/*/outputs/
+!/Lab_2/results/*/outputs/

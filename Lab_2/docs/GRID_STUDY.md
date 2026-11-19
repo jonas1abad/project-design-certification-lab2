@@ -1,6 +1,6 @@
 # Grid refinement and wake convergence
 
-Edit `main_grid_study.py` at the repository root and run it in the OpenVSP-compatible environment. Shared implementation lives in `lab2/aero`; the level definitions and default flight condition live in `configs/grid_study.json`. Config-file paths resolve relative to the config file.
+Edit `main_grid_study.py` at the `Lab_2/` folder and run it in the OpenVSP-compatible environment. Shared implementation lives in `lab2/aero`; the level definitions and default flight condition live in `configs/grid_study.json`. Config-file paths resolve relative to the config file.
 
 ## Editable settings
 

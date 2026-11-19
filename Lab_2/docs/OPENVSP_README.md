@@ -6,7 +6,7 @@ Workflow: inputs/toolOutput.xml -> parse_cpacs_geometry.py -> geometry_data/open
 
 Use the Python version supported by your official OpenVSP distribution (the lab guide names OpenVSP 3.40.1). Install its Python API following that distribution's instructions. Do not install an unrelated package named vsp. This builder imports `openvsp`, falling back to `vsp` for your older binding style.
 
-From the repository root:
+From the `Lab_2/` folder:
 
 ```bash
 python -m lab2.geometry.build_openvsp --validate-only

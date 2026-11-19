@@ -1,0 +1,1 @@
+# No extra PyPI dependencies. Install the official OpenVSP API as shown in README.md.

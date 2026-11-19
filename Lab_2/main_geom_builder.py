@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent
 
 def find_section_a_sources(xml):
     """Find a local VAMPzero run only when its companion XML matches exactly."""
-    baseline = ROOT.parent.parent / 'UC3M2.1_baseline_case' / 'UC3MX.Y_template'
+    baseline = ROOT.parents[2] / 'UC3M2.1_baseline_case' / 'UC3MX.Y_template'
     candidates = [(xml.parent / 'VAMPzero.m', xml)]
     if xml.parent.name.lower() == 'tooloutput':
         candidates.append((xml.parent.parent / 'ReturnDirectory' / 'VAMPzero.m', xml))

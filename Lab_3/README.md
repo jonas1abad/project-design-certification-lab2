@@ -4,7 +4,20 @@ This standalone workflow extends the UC3M2.1 Lab 2 aircraft for Parts III and IV
 
 ## Setup
 
-Use Windows x64, Python 3.11, and the Python API from OpenVSP 3.43.0 with its companion packages. The local environment is `.venv`. The requirements snapshot includes machine-specific paths to the OpenVSP distribution. Adjust those paths to match your installation when recreating the environment.
+Use Windows x64, Python 3.11, and the Python API from OpenVSP 3.43.0 with its companion packages. The local environment is `.venv`. The parser uses the Python standard library. Install the official OpenVSP API into your environment for the builder and solver. Create the environment from this folder and replace the OpenVSP path with your installation:
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+$vspPython = 'C:\path\to\OpenVSP-3.43.0-win64\python'
+Push-Location $vspPython
+python -m pip install -r requirements.txt
+Pop-Location
+python -m pip install --no-deps -e "$vspPython\openvsp"
+python -c "import openvsp as vsp; print(vsp.GetVSPVersion())"
+```
+
+The CPACS XML and baseline model are provided under `inputs/`.
 
 ## Run from this folder
 
